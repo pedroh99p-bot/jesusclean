@@ -25,7 +25,7 @@
             --cor-agua: #2EE6A6;   /* Verde Água (Secundário) */
             --cor-whatsapp: #25D366;
             --cor-whatsapp-hover: #1EBE5D;
-            --cor-erro: #E31E24;   /* Para frente dos Flip Cards */
+            --cor-erro: #E31E24;   /* Frente dos Flip Cards */
             
             --bg-glass: rgba(8, 19, 29, 0.6);
             --border-glass: rgba(0, 174, 239, 0.15);
@@ -69,29 +69,6 @@
         .snowflakes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
         .snowflake { position: absolute; color: rgba(255, 255, 255, 0.15); font-size: 1.2rem; filter: blur(1px); animation: fall linear infinite; }
 
-        /* Preloader */
-        #preloader {
-            position: fixed; inset: 0; background: var(--cor-1); z-index: 9999;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-            background-image: radial-gradient(circle at center, rgba(0, 174, 239, 0.15) 0%, var(--cor-1) 70%);
-        }
-        .preloader-logo { 
-            width: 220px; max-width: 80%; animation: pulse-logo 2s ease-in-out infinite alternate; 
-            margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(0, 174, 239, 0.4)); object-fit: contain;
-        }
-        .preloader-bar-container {
-            width: 200px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
-        }
-        .preloader-bar {
-            height: 100%; background: linear-gradient(90deg, var(--cor-3), var(--cor-agua));
-            width: 0%; animation: load-bar 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-        
-        @keyframes pulse-logo { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.05); opacity: 1; } }
-        @keyframes load-bar { 0% { width: 0%; } 40% { width: 50%; } 100% { width: 100%; } }
-
         /* Typography */
         h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.15; font-weight: 700; }
         h1 { font-size: clamp(2.2rem, 5vw, 4.2rem); margin-bottom: 1rem; letter-spacing: -1px; }
@@ -103,7 +80,7 @@
 
         /* Layout & Spacing */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2; }
-        .section { padding: 6rem 0; position: relative; } 
+        .section { padding: 5rem 0; position: relative; } 
         .text-center { text-align: center; }
         .grid { display: grid; gap: 2rem; }
 
@@ -118,7 +95,7 @@
         .glass-card:hover { border-color: var(--border-glow); transform: translateY(-5px); background: rgba(8, 19, 29, 0.8); }
 
         /* Elegant Dividers (Water Drop variant) */
-        .elegant-divider { display: flex; align-items: center; justify-content: center; padding: 3rem 0; opacity: 0; transform: translateY(20px); transition: all 1s ease; position: relative; z-index: 2; }
+        .elegant-divider { display: flex; align-items: center; justify-content: center; padding: 2.5rem 0; opacity: 0; transform: translateY(20px); transition: all 1s ease; position: relative; z-index: 2; }
         .elegant-divider.active { opacity: 1; transform: translateY(0); }
         .divider-line { height: 1px; width: 120px; background: linear-gradient(90deg, transparent, rgba(0,174,239,0.5), transparent); position: relative; }
         .divider-center { position: relative; margin: 0 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--cor-3); text-shadow: 0 0 10px rgba(0,174,239,0.6); }
@@ -129,6 +106,28 @@
         
         @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 0.3; } 100% { transform: translateY(-15px) scale(1.5); opacity: 0.8; } }
         @keyframes pulseGlow { 0%, 100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 10px var(--cor-3); } }
+
+        /* Preloader */
+        #preloader {
+            position: fixed; inset: 0; background: var(--cor-1); z-index: 9999;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+            background-image: radial-gradient(circle at center, rgba(0, 174, 239, 0.15) 0%, var(--cor-1) 70%);
+        }
+        .preloader-logo { 
+            width: 220px; max-width: 80%; animation: pulse-logo 2.5s ease-in-out infinite alternate; 
+            margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(0, 174, 239, 0.4)); object-fit: contain;
+        }
+        .preloader-bar-container {
+            width: 200px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        }
+        .preloader-bar {
+            height: 100%; background: linear-gradient(90deg, var(--cor-3), var(--cor-agua));
+            width: 0%; animation: load-bar 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes pulse-logo { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.05); opacity: 1; } }
+        @keyframes load-bar { 0% { width: 0%; } 40% { width: 50%; } 100% { width: 100%; } }
 
         /* Buttons & CTAs */
         .btn {
@@ -155,7 +154,6 @@
             box-shadow: 0 0 25px rgba(0, 174, 239, 0.4);
             border-color: #fff; transform: translateY(-3px);
         }
-        /* Instagram Button */
         .btn-ig {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: #fff; border: none;
@@ -169,25 +167,26 @@
         /* Navbar iPhone Style */
         header {
             position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 100;
-            width: 95%; max-width: 850px; padding: 0.6rem 1rem;
+            width: 95%; max-width: 1000px; padding: 0.6rem 1rem;
             background: rgba(6, 40, 61, 0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
             transition: var(--transition);
         }
         header.scrolled {
-            top: 0.8rem; width: 90%; background: rgba(6, 40, 61, 0.85);
+            top: 0.8rem; width: 92%; background: rgba(6, 40, 61, 0.85);
             box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 15px rgba(0, 174, 239, 0.1);
             border-color: rgba(0, 174, 239, 0.3); padding: 0.5rem 1rem;
         }
         .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
         
-        .logo-nav-container { display: flex; align-items: center; height: 35px; width: 50px; }
-        .logo-nav { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 5px rgba(0,174,239,0.5)); transition: var(--transition); }
+        .logo-nav-container { display: flex; align-items: center; gap: 0.5rem; height: 35px; text-decoration: none; }
+        .logo-icon { height: 100%; width: auto; object-fit: contain; filter: drop-shadow(0 0 5px rgba(0,174,239,0.5)); transition: var(--transition); }
+        .logo-text { height: 70%; width: auto; object-fit: contain; filter: drop-shadow(0 0 2px rgba(255,255,255,0.2)); transition: var(--transition); }
         
-        .nav-links { display: flex; gap: 1.5rem; align-items: center; margin-left: auto; }
+        .nav-links { display: flex; gap: 1.2rem; align-items: center; margin-left: auto; }
         .nav-links a.menu-link { 
-            color: var(--cor-4); text-decoration: none; font-weight: 500; font-size: 0.9rem;
+            color: var(--cor-4); text-decoration: none; font-weight: 500; font-size: 0.85rem;
             font-family: var(--font-body); transition: var(--transition); opacity: 0.8;
         }
         .nav-links a.menu-link:hover { color: var(--cor-3); opacity: 1; }
@@ -202,7 +201,7 @@
         }
         .hero-bg::after {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(to right, rgba(6, 40, 61, 0.95) 0%, rgba(6, 40, 61, 0.7) 50%, rgba(6, 40, 61, 0.2) 100%);
+            background: linear-gradient(to right, rgba(6, 40, 61, 0.95) 0%, rgba(6, 40, 61, 0.8) 40%, rgba(6, 40, 61, 0.3) 100%);
         }
         
         .hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
@@ -231,57 +230,49 @@
         @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 
         /* Flip Cards */
-        .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; perspective: 1000px; }
+        .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; perspective: 1000px; }
         .flip-card { background-color: transparent; height: 260px; perspective: 1000px; cursor: pointer; }
         .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); } /* Hover Desktop */
         .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } /* Toque Mobile */
         
-        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1rem; }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1.5rem; }
         
         .flip-card-front { background: linear-gradient(135deg, rgba(227, 30, 36, 0.1), rgba(8, 19, 29, 0.8)); border: 1px solid rgba(227, 30, 36, 0.3); color: var(--cor-4); }
         .flip-card-front .icon { font-size: 2.5rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(227, 30, 36, 0.5)); }
-        .flip-card-front h4 { font-size: 1.1rem; line-height: 1.3; }
-        .tap-hint { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; animation: pulse-opacity 2s infinite; font-weight: 300; }
-        @keyframes pulse-opacity { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        .flip-card-front h4 { font-size: 1.2rem; line-height: 1.3; }
+        .tap-hint { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; animation: pulse-opacity 2s infinite; font-weight: 300; background: rgba(0,0,0,0.3); padding: 0.3rem 0.8rem; border-radius: 20px;}
+        @keyframes pulse-opacity { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
         
         .flip-card-back { background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(8, 19, 29, 0.9)); border: 1px solid rgba(37, 211, 102, 0.4); color: var(--cor-4); transform: rotateY(180deg); padding: 1.5rem; justify-content: space-between; }
-        .flip-card-back p { font-size: 0.9rem; margin-bottom: 1rem; color: var(--cor-4); font-weight: 400; line-height: 1.4; }
-        .flip-card-back .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .flip-card-back p { font-size: 0.95rem; margin-bottom: 1rem; color: var(--cor-4); font-weight: 400; line-height: 1.4; }
+        .flip-card-back .icon { font-size: 2rem; margin-bottom: 0.5rem; color: var(--cor-whatsapp); filter: drop-shadow(0 0 5px rgba(37,211,102,0.5)); }
         .flip-card-back .btn-mini { background: var(--cor-whatsapp); color: #fff; text-decoration: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; width: 100%; transition: var(--transition); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
         .flip-card-back .btn-mini:hover { background: var(--cor-whatsapp-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5); }
 
         /* Specialist Section */
-        .specialist-section { position: relative; z-index: 2; }
+        .specialist-section { position: relative; z-index: 2; padding-top: 4rem; }
         .specialist-wrapper { 
-            display: grid; 
-            grid-template-areas: "foto texto" "foto stats" "foto btns"; 
-            grid-template-columns: 320px 1fr; 
-            gap: 1rem 3rem; 
-            align-items: center; 
-            background: rgba(255,255,255,0.02); 
-            padding: 3rem; 
-            border-radius: 24px; 
-            border: 1px solid rgba(255,255,255,0.05);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            background: rgba(255,255,255,0.02); padding: 3rem 2rem; border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.05); max-width: 800px; margin: 0 auto;
         }
-        .specialist-col-left { grid-area: foto; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .badge-specialist { background: rgba(0,174,239,0.1); color: var(--cor-3); font-family: var(--font-title); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; padding: 0.4rem 1.2rem; border-radius: 20px; border: 1px solid rgba(0,174,239,0.2); margin-bottom: 1.5rem; text-transform: uppercase; }
-        .specialist-img-box { width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); position: relative; margin-bottom: 1.5rem; }
-        .specialist-img-box::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,40,61,0.6), transparent); opacity: 0.8; }
+        .badge-specialist { background: rgba(0,174,239,0.1); color: var(--cor-3); font-family: var(--font-title); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; padding: 0.4rem 1.2rem; border-radius: 20px; border: 1px solid rgba(0,174,239,0.2); margin-bottom: 1.5rem; text-transform: uppercase; display: inline-block;}
+        .specialist-img-box { width: 220px; max-width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); position: relative; margin-bottom: 1.5rem; }
+        .specialist-img-box::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,40,61,0.6), transparent); opacity: 0.6; }
         .specialist-img-box img { width: 100%; height: auto; display: block; aspect-ratio: 4/5; object-fit: cover; }
         
-        .specialist-text-area { grid-area: texto; }
-        .specialist-name { font-size: 1.8rem; color: var(--cor-4); margin-bottom: 0.2rem; }
-        .specialist-role { font-size: 1rem; color: var(--cor-3); font-weight: 500; margin-bottom: 1rem; }
-        .specialist-text-area p { margin-bottom: 1rem; font-size: 1.15rem; line-height: 1.7; color: var(--cor-4); font-weight: 300; }
+        .specialist-name { font-size: 2rem; color: var(--cor-4); margin-bottom: 0.2rem; }
+        .specialist-role { font-size: 1rem; color: var(--cor-3); font-weight: 500; margin-bottom: 1.5rem; }
+        .specialist-wrapper p.bio { margin-bottom: 2rem; font-size: 1.15rem; line-height: 1.6; color: var(--cor-4); font-weight: 300; max-width: 700px;}
         
-        .stats-wrap { grid-area: stats; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+        .stats-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; width: 100%; }
         .stat-card-elegant { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); padding: 1.5rem 1rem; border-radius: 12px; text-align: center; transition: var(--transition); }
         .stat-card-elegant:hover { background: rgba(0,174,239,0.05); border-color: rgba(0,174,239,0.2); transform: translateY(-3px); }
-        .stat-card-elegant .num { font-family: var(--font-title); font-size: 2.2rem; font-weight: 800; color: var(--cor-4); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,174,239,0.3); display: flex; align-items: center; justify-content: center; gap: 2px; }
+        .stat-card-elegant .num { font-family: var(--font-title); font-size: 2rem; font-weight: 800; color: var(--cor-4); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,174,239,0.3); display: flex; align-items: center; justify-content: center; gap: 2px; }
         .stat-card-elegant .lbl { font-size: 0.85rem; color: var(--cor-5); font-weight: 400; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .specialist-btns { grid-area: btns; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start; }
+        .specialist-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; width: 100%;}
 
         /* Services Carousel */
         .services-carousel-wrapper { width: 100%; overflow: hidden; padding: 1rem 0 1rem; cursor: grab; margin-top: 2rem; -webkit-overflow-scrolling: touch; }
@@ -306,13 +297,12 @@
         }
         .mini-cta:hover { background: var(--cor-whatsapp); color: #fff; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); border-color: var(--cor-whatsapp); }
 
-        /* Swipe Hint */
         .swipe-hint { display: none; color: var(--cor-5); font-size: 0.95rem; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; font-weight: 300; }
         .swipe-hint .finger { font-size: 1.5rem; animation: swipeAnim 1.5s infinite ease-in-out; }
         @keyframes swipeAnim { 0%, 100% { transform: translateX(5px); } 50% { transform: translateX(-5px); } }
 
         /* Quiz Container */
-        .quiz-container { max-width: 750px; margin: 0 auto; text-align: center; padding: 3rem; }
+        .quiz-container { max-width: 800px; margin: 0 auto; text-align: center; padding: 3rem; }
         .quiz-step { display: none; animation: fadeIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
         .quiz-step.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
@@ -335,6 +325,10 @@
         }
         .quiz-back-btn:hover { color: var(--cor-3); }
 
+        .summary-box { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; text-align: left; margin-bottom: 2rem; }
+        .summary-item { margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .summary-item strong { color: var(--cor-3); }
+
         /* Testimonials Carousel (Infinito) */
         .testimonials-wrapper { position: relative; width: 100%; overflow: hidden; padding: 2rem 0 4rem; margin-top: 1rem; }
         .testimonials-wrapper::before, .testimonials-wrapper::after { content: ''; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none; }
@@ -342,7 +336,7 @@
         .testimonials-wrapper::after { right: 0; background: linear-gradient(to left, var(--cor-1), transparent); }
         
         .testi-track { display: flex; width: max-content; animation: scroll-marquee 45s linear infinite; gap: 2rem; padding: 0 1rem; }
-        .testimonials-wrapper:hover .testi-track { animation-play-state: paused; }
+        .testimonials-wrapper:hover .testi-track, .testimonials-wrapper:active .testi-track { animation-play-state: paused; }
         
         .review-card-elegant {
             background: rgba(8, 19, 29, 0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;
@@ -363,15 +357,17 @@
         .map-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
         @media (min-width: 768px) { .map-card { flex-direction: row; align-items: stretch; } }
         
-        .map-iframe-container { flex: 1; position: relative; min-height: 350px; }
-        .map-overlay-badge { position: absolute; top: 1.5rem; left: 1.5rem; background: rgba(6,40,61,0.85); backdrop-filter: blur(10px); padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid rgba(0,174,239,0.3); color: var(--cor-4); font-weight: 600; z-index: 2; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .map-iframe-container { flex: 1; position: relative; min-height: 350px; border-radius: 20px 20px 0 0;}
+        @media (min-width: 768px) { .map-iframe-container { border-radius: 20px 0 0 20px; } }
+        
+        .map-overlay-badge { position: absolute; top: 1.5rem; left: 1.5rem; background: rgba(6,40,61,0.85); backdrop-filter: blur(10px); padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid rgba(0,174,239,0.3); color: var(--cor-4); font-weight: 600; z-index: 2; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); font-size: 0.9rem;}
         .map-iframe-container iframe { width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg) saturate(150%) brightness(85%) contrast(110%); object-fit: cover; }
         
         .map-info { flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center; background: rgba(8, 19, 29, 0.4); }
         .map-info h3 { color: var(--cor-3); margin-bottom: 0.5rem; font-weight: 600; }
         .map-info p { margin-bottom: 1.5rem; font-size: 1rem; color: var(--cor-5); }
         
-        .region-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; justify-content: center; }
+        .region-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; justify-content: center; }
         .region-tag { background: rgba(0, 174, 239, 0.08); border: 1px solid rgba(0, 174, 239, 0.2); color: var(--cor-4); padding: 0.4rem 0.8rem; border-radius: 50px; font-size: 0.85rem; display: inline-block; }
         @media (min-width: 768px) { .region-tags { justify-content: flex-start; } }
 
@@ -404,81 +400,79 @@
         /* Responsive */
         @media (max-width: 992px) {
             .hero-content { align-items: center; text-align: center; }
-            .hero-content-inner { display: flex; flex-direction: column; align-items: center; }
-            .hero-ctas { justify-content: center; }
+            .hero-content-inner { display: flex; flex-direction: column; align-items: center; text-align: left;} /* Left align inside center */
+            .hero-content-inner > * { width: 100%; text-align: left; }
+            .hero-ctas { justify-content: flex-start; }
+            .map-card { flex-direction: column; }
         }
 
         @media (max-width: 768px) {
             header { width: 92%; top: 1rem; padding: 0.5rem 1rem; border-radius: 30px; }
             header.scrolled { width: 95%; top: 0.5rem; padding: 0.5rem 1rem; }
+            
+            .logo-text { display: none; } /* Hide text logo on very small screens to save space */
+            
             .nav-links {
                 position: absolute; top: 120%; left: 0; width: 100%; background: rgba(6, 40, 61, 0.95);
-                flex-direction: column; padding: 2rem; gap: 1.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+                flex-direction: column; padding: 1.5rem; gap: 1.2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease; backdrop-filter: blur(15px);
             }
             .nav-links.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-            .nav-links a.menu-link { display: none; }
+            .nav-links a.menu-link { display: block; width: 100%; text-align: center; font-size: 1rem; padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.05);}
+            .nav-links a.menu-link:last-child { border-bottom: none; }
             .mobile-menu-btn { display: block; }
             
-            .hero { padding-top: 7.5rem; text-align: left; }
+            .hero { padding-top: 7rem; text-align: left; }
             .hero-bg {
                 background-image: url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163972/4c1cd565-a380-4d2d-85ff-5d7f244fef68_1_huy4fa.webp');
-                background-size: 80%;
-                background-position: center 30%;
-                background-repeat: no-repeat;
-                background-color: var(--cor-1); 
+                background-size: 80%; background-position: center 30%; background-repeat: no-repeat; background-color: var(--cor-1); 
             }
-            .hero-bg::after { background: rgba(6, 40, 61, 0.88); }
+            .hero-bg::after { background: rgba(6, 40, 61, 0.9); }
             
             .hero-content { align-items: flex-start; }
-            .hero-content-inner { align-items: flex-start; }
             .hero-ctas { flex-direction: column; width: 100%; }
             .hero-ctas .btn { width: 100%; justify-content: center; }
             
             /* Flip Grid Mobile Layout: 2x2 */
             .flip-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .flip-card { height: 240px; }
-            .flip-card-front .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+            .flip-card-front { padding: 1.5rem 0.5rem; }
+            .flip-card-front .icon { font-size: 2rem; margin-bottom: 0.5rem; }
             .flip-card-front h4 { font-size: 0.95rem; }
-            .flip-card-back { padding: 1rem; }
-            .flip-card-back .icon { font-size: 1.2rem; }
+            .tap-hint { font-size: 0.7rem; margin-top: 1rem; padding: 0.2rem 0.5rem;}
+            .flip-card-back { padding: 1rem 0.5rem; }
+            .flip-card-back .icon { font-size: 1.5rem; }
             .flip-card-back p { font-size: 0.75rem; line-height: 1.2; margin-bottom: 0.5rem; }
             .flip-card-back .btn-mini { font-size: 0.7rem; padding: 0.5rem; }
             
             /* Specialist Mobile Overrides */
-            .specialist-wrapper { 
-                grid-template-areas: "foto texto" "stats stats" "btns btns"; 
-                grid-template-columns: 110px 1fr; 
-                gap: 1.5rem 1rem; 
-                padding: 1.5rem; 
-                align-items: start; 
-            }
-            .specialist-col-left { margin: 0; }
-            .specialist-text-area p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 0; }
-            .specialist-name { font-size: 1.3rem; margin-bottom: 0; }
-            .specialist-role { font-size: 0.75rem; margin-bottom: 0.5rem; }
-            .badge-specialist { font-size: 0.6rem; padding: 0.2rem 0.5rem; margin-bottom: 0.5rem; display: inline-block; }
-            .specialist-img-box { margin-bottom: 0; border-radius: 12px; }
-            .stats-wrap { display: flex; justify-content: space-between; gap: 0.5rem; margin-bottom: 0; }
-            .stat-card-elegant { padding: 0.8rem 0.2rem; flex: 1; border-radius: 8px; }
-            .stat-card-elegant .num { font-size: 1.1rem; }
-            .stat-card-elegant .lbl { font-size: 0.6rem; }
-            .specialist-btns { display: flex; flex-direction: row; gap: 0.5rem; }
-            .specialist-btns .btn { flex: 1; padding: 0.8rem 0.2rem; font-size: 0.9rem; justify-content: center; }
-            .specialist-btns .btn svg { width: 18px; height: 18px; }
+            .specialist-wrapper { padding: 2rem 1.5rem; }
+            .specialist-img-box { width: 180px; }
+            .specialist-name { font-size: 1.5rem; }
+            .specialist-wrapper p.bio { font-size: 1rem; margin-bottom: 1.5rem;}
+            .stat-card-elegant { padding: 1rem 0.5rem; }
+            .stat-card-elegant .num { font-size: 1.5rem; }
+            .stat-card-elegant .lbl { font-size: 0.75rem; }
+            .specialist-btns { flex-direction: column; }
+            .specialist-btns .btn { width: 100%; justify-content: center; font-size: 0.95rem; padding: 1rem;}
 
             .swipe-hint { display: flex; }
             
-            .quiz-options { grid-template-columns: 1fr; }
-            .quiz-container { padding: 2rem 1.5rem; }
-            .review-card-elegant { width: 320px; padding: 1.5rem; }
-            .map-info { padding: 2rem; }
+            .quiz-options { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .quiz-btn { padding: 1rem 0.5rem; font-size: 0.9rem; text-align: center; align-items: center;}
+            .quiz-container { padding: 2rem 1rem; }
+            
+            .review-card-elegant { width: 300px; padding: 1.5rem; }
+            .map-info { padding: 2rem 1.5rem; }
+            
             .floating-icons { bottom: 1rem; right: 1rem; }
             .floating-icon { width: 45px; height: 45px; }
+            
+            .section { padding: 4rem 0; }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <!-- 1. Preloader -->
     <div id="preloader">
@@ -491,28 +485,45 @@
     <!-- 2. Navbar iPhone Style -->
     <header id="header">
         <div class="nav-container">
-            <a href="#" class="logo-nav-container" aria-label="Home">
-                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/1_ipnatz.webp" alt="Jesus Clean Icon" class="logo-nav">
+            <a href="#top" class="logo-nav-container" aria-label="Home">
+                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/1_ipnatz.webp" alt="Jesus Clean Icon" class="logo-icon">
+                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/2_w9fb09.webp" alt="Jesus Clean" class="logo-text">
             </a>
             
             <nav class="nav-links" id="navLinks">
+                <a href="#hero" class="menu-link">Início</a>
+                <a href="#problemas" class="menu-link">Soluções</a>
+                <a href="#especialista" class="menu-link">Quem Somos</a>
                 <a href="#servicos" class="menu-link">Serviços</a>
-                <a href="#especialista" class="menu-link">Especialista</a>
-                <a href="#depoimentos" class="menu-link">Avaliações</a>
+                <a href="#quiz" class="menu-link">Orçamento</a>
                 <a href="#mapa" class="menu-link">Atendimento</a>
-                <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento." style="padding: 0.5rem 1.2rem; font-size: 0.9rem; border-radius: 50px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                <!-- Mobile CTA inside menu -->
+                <a href="#" class="btn btn-wa wa-link menu-cta-mobile" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento." style="display: none; padding: 0.8rem; margin-top: 1rem; width: 100%; justify-content: center; font-size: 1rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
                     WhatsApp
                 </a>
             </nav>
+            
+            <!-- Desktop CTA -->
+            <a href="#" class="btn btn-wa wa-link header-cta-desktop" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento." style="padding: 0.5rem 1.2rem; font-size: 0.9rem; border-radius: 50px; margin-left: 1.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                WhatsApp
+            </a>
+
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </div>
+        <style>
+            @media (max-width: 768px) {
+                .header-cta-desktop { display: none !important; }
+                .menu-cta-mobile { display: flex !important; }
+            }
+        </style>
     </header>
 
     <!-- 3. Hero Section -->
-    <section class="hero bg-bubbles">
+    <section id="hero" class="hero bg-bubbles">
         <div class="hero-bg"></div>
         <div class="container hero-content reveal">
             <div class="hero-content-inner">
@@ -522,14 +533,14 @@
                 </div>
                 
                 <h1 class="text-gradient">Seu sofá limpo, cheiroso e <span class="text-accent">renovado sem sair de casa</span></h1>
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">
-                    Higienização profissional de estofados no Rio de Janeiro com atendimento agendado, cuidado com o tecido e resultado visível na primeira sessão.
+                <p style="font-size: 1.2rem; margin-bottom: 1rem; max-width: 90%;">
+                    Higienização profissional de estofados no Rio de Janeiro com atendimento agendado, cuidado com o tecido e resultado visível.
                 </p>
 
                 <div class="hero-ctas">
                     <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento para limpar meu sofá/estofado.">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                        Atendimento no WhatsApp
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                        Pedir orçamento no WhatsApp
                     </a>
                     <a href="#quiz" class="btn btn-glow">Fazer pré-orçamento</a>
                 </div>
@@ -545,14 +556,15 @@
     </div>
 
     <!-- 5. Cards Flip Dor / Solução -->
-    <section class="section bg-waves">
+    <section id="problemas" class="section bg-waves">
         <div class="container">
             <div class="text-center reveal" style="margin-bottom: 3rem;">
                 <h2>Seu estofado pode estar <span class="text-accent">mais sujo do que parece</span></h2>
                 <p>A limpeza comum não alcança sujeiras profundas, odores e impurezas acumuladas no tecido.</p>
             </div>
             
-            <div class="flip-grid reveal reveal-delay-1">
+            <div class="flip-grid reveal reveal-delay-1" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); max-width: 1000px; margin: 0 auto;">
+                
                 <!-- Card 1 -->
                 <div class="flip-card" onclick="this.classList.toggle('flipped')">
                     <div class="flip-card-inner">
@@ -562,12 +574,15 @@
                             <div class="tap-hint">👆 Toque para virar</div>
                         </div>
                         <div class="flip-card-back">
-                            <div class="icon">🛡️</div>
+                            <div class="icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
                             <p>Higienização profunda para ajudar a remover odores e deixar o ambiente agradável.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de resolver o problema de mau cheiro no meu sofá.">Resolver no WhatsApp</a>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Card 2 -->
                 <div class="flip-card" onclick="this.classList.toggle('flipped')">
                     <div class="flip-card-inner">
@@ -577,12 +592,15 @@
                             <div class="tap-hint">👆 Toque para virar</div>
                         </div>
                         <div class="flip-card-back">
-                            <div class="icon">🛡️</div>
-                            <p>Avaliação do tecido e limpeza técnica para melhorar muito o aspecto do estofado.</p>
+                            <div class="icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <p>Avaliação do tecido e limpeza técnica para melhorar o aspecto do estofado.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de uma avaliação para as manchas no meu estofado.">Avaliar minha peça</a>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Card 3 -->
                 <div class="flip-card" onclick="this.classList.toggle('flipped')">
                     <div class="flip-card-inner">
@@ -592,32 +610,38 @@
                             <div class="tap-hint">👆 Toque para virar</div>
                         </div>
                         <div class="flip-card-back">
-                            <div class="icon">🛡️</div>
+                            <div class="icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
                             <p>Processo profissional focado em deixar o estofado limpo e confortável para a família.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de higienizar meu estofado contra ácaros.">Quero higienizar</a>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Card 4 -->
                 <div class="flip-card" onclick="this.classList.toggle('flipped')">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="icon">❌</div>
-                            <h4>Pet e Crianças</h4>
+                            <h4>Aparência envelhecida</h4>
                             <div class="tap-hint">👆 Toque para virar</div>
                         </div>
                         <div class="flip-card-back">
-                            <div class="icon">🛡️</div>
-                            <p>Ideal para casas com alto uso diário, mantendo estofados limpos e agradáveis.</p>
-                            <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Tenho pet/criança e preciso higienizar meu estofado.">Falar com a equipe</a>
+                            <div class="icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <p>Limpeza especializada para recuperar a sensação de cuidado e renovar o visual da peça.</p>
+                            <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de um orçamento para renovar meu estofado.">Pedir orçamento</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Elegant Divider (Water Drop) -->
+    <!-- Elegant Divider (Drop) -->
     <div class="elegant-divider reveal">
         <div class="divider-line"></div>
         <div class="divider-center">
@@ -632,26 +656,26 @@
     <!-- 6. Specialist Section -->
     <section id="especialista" class="section specialist-section">
         <div class="container reveal">
+            <div class="text-center" style="margin-bottom: 2.5rem;">
+                <h2>QUEM SOMOS</h2>
+            </div>
+            
             <div class="specialist-wrapper glass-card">
                 
-                <div class="specialist-col-left">
-                    <div class="badge-specialist">O Especialista</div>
-                    <div class="specialist-img-box">
-                        <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780161811/b03519e2-45e8-4824-a539-8ad03e271cfa_yngmoi.webp" alt="Igor Jesus">
-                    </div>
+                <div class="badge-specialist">O Especialista</div>
+                <div class="specialist-img-box">
+                    <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780161811/b03519e2-45e8-4824-a539-8ad03e271cfa_yngmoi.webp" alt="Igor Jesus">
                 </div>
                 
-                <div class="specialist-text-area">
-                    <h3 class="specialist-name">Igor Jesus</h3>
-                    <p class="specialist-role">Fundador da Jesus Clean</p>
-                    <p>
-                        Igor Jesus lidera a Jesus Clean com foco em cuidado, pontualidade e resultado visível. Cada atendimento é feito com atenção extrema ao tecido, orientação clara e o compromisso em entregar um estofado mais limpo, confortável e agradável para sua casa ou empresa.
-                    </p>
-                </div>
+                <h3 class="specialist-name">IGOR JESUS</h3>
+                <p class="specialist-role">Fundador da Jesus Clean</p>
+                <p class="bio">
+                    A Jesus Clean nasceu para entregar higienização profissional com cuidado, confiança e resultado visível. Igor Jesus lidera cada atendimento com atenção aos detalhes e compromisso com a satisfação do cliente.
+                </p>
                 
                 <div class="stats-wrap">
                     <div class="stat-card-elegant">
-                        <div class="num"><span data-prefix="+ "></span><span class="counter" data-target="5000">0</span></div>
+                        <div class="num"><span data-prefix="+ "></span><span class="counter" data-target="500">0</span></div>
                         <div class="lbl">Clientes Satisfeitos</div>
                     </div>
                     <div class="stat-card-elegant">
@@ -666,8 +690,8 @@
                 
                 <div class="specialist-btns">
                     <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá Igor! Vim pelo site e gostaria de conversar sobre a higienização do meu estofado.">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                        WhatsApp
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                        Falar com Igor no WhatsApp
                     </a>
                     <a href="https://instagram.com/jesus.clean" target="_blank" class="btn btn-ig">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -678,15 +702,10 @@
         </div>
     </section>
 
-    <!-- Elegant Divider (Water Drop) -->
+    <!-- Elegant Divider -->
     <div class="elegant-divider reveal">
         <div class="divider-line"></div>
-        <div class="divider-center">
-            💧
-            <div class="div-particle dp1"></div>
-            <div class="div-particle dp2"></div>
-            <div class="div-particle dp3"></div>
-        </div>
+        <div class="divider-center">💧<div class="div-particle dp1"></div><div class="div-particle dp2"></div><div class="div-particle dp3"></div></div>
         <div class="divider-line"></div>
     </div>
 
@@ -706,7 +725,7 @@
                     </div>
                     <h3>Higienização de Sofá</h3>
                     <p>Limpeza profunda que remove manchas, encardido e devolve o conforto à sua sala de estar.</p>
-                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização do meu sofá."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização do meu sofá.">Orçar este serviço</a>
                 </div>
                 <div class="service-card">
                     <div class="service-header">
@@ -715,7 +734,7 @@
                     </div>
                     <h3>Limpeza de Colchão</h3>
                     <p>Processo focado na eliminação de suor, pele morta e ácaros. Durma em um ambiente limpo e seguro.</p>
-                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a limpeza do meu colchão."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a limpeza do meu colchão.">Orçar este serviço</a>
                 </div>
                 <div class="service-card">
                     <div class="service-header">
@@ -724,7 +743,7 @@
                     </div>
                     <h3>Poltronas e Cadeiras</h3>
                     <p>Renovação do estofado de cadeiras de jantar, escritório e poltronas com técnica adequada.</p>
-                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização de poltronas/cadeiras."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização de poltronas/cadeiras.">Orçar este serviço</a>
                 </div>
                 <div class="service-card">
                     <div class="service-header">
@@ -733,16 +752,16 @@
                     </div>
                     <h3>Higienização de Tapetes</h3>
                     <p>Lavagem técnica para remover poeira profunda e odores de tapetes comuns ou mais pesados.</p>
-                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a lavagem do meu tapete."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a lavagem do meu tapete.">Orçar este serviço</a>
                 </div>
                 <div class="service-card">
                     <div class="service-header">
-                        <div class="service-icon">🏢</div>
-                        <div class="service-time">⏱️ Sob consulta</div>
+                        <div class="service-icon">🚗</div>
+                        <div class="service-time">⏱️ 1h a 2h</div>
                     </div>
-                    <h3>Limpeza Comercial</h3>
-                    <p>Higienização em grande escala de cadeiras de escritório e estofados para empresas no RJ.</p>
-                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Sou empresa e quero orçar higienização comercial."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                    <h3>Bancos Automotivos</h3>
+                    <p>Higienização interna que valoriza o veículo e remove sujidades acumuladas nos bancos.</p>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização dos bancos do meu carro.">Orçar este serviço</a>
                 </div>
             </div>
         </div>
@@ -763,7 +782,7 @@
         <div class="container">
             <div class="text-center reveal" style="margin-bottom: 3rem;">
                 <h2>Faça seu <span class="text-accent">Pré-Orçamento Online</span></h2>
-                <p>Responda 6 perguntas rápidas para facilitar seu atendimento.</p>
+                <p>Responda rápido para facilitar seu atendimento.</p>
             </div>
 
             <div class="glass-card quiz-container reveal">
@@ -801,7 +820,7 @@
                 <div class="quiz-step" id="step3">
                     <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(3, 2)">← Voltar</button></div>
                     <h3>📸 Você consegue enviar foto da peça?</h3>
-                    <div class="quiz-options" style="grid-template-columns: 1fr; max-width: 400px; margin-inline: auto;">
+                    <div class="quiz-options">
                         <button class="quiz-btn" onclick="nextQuiz(3, 4, 'Posso enviar foto agora', 'p3')"><i>📱</i> Sim, envio no WhatsApp</button>
                         <button class="quiz-btn" onclick="nextQuiz(3, 4, 'Prefiro explicar sem foto', 'p3')"><i>💬</i> Prefiro só explicar</button>
                     </div>
@@ -814,7 +833,7 @@
                     <div class="quiz-options">
                         <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Zona Sul', 'p4')"><i>🏖️</i> Zona Sul</button>
                         <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Zona Norte / Tijuca', 'p4')"><i>🏙️</i> Z. Norte / Tijuca</button>
-                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Zona Oeste / Barra / Recreio', 'p4')"><i>🌅</i> Barra / Z. Oeste</button>
+                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Barra / Recreio / Z. Oeste', 'p4')"><i>🌅</i> Barra / Z. Oeste</button>
                         <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Centro', 'p4')"><i>🏢</i> Centro</button>
                         <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Baixada / Entorno', 'p4')"><i>🛣️</i> Baixada / Outros</button>
                     </div>
@@ -834,9 +853,9 @@
 
                 <!-- Q6 -->
                 <div class="quiz-step" id="step6">
-                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(6, 5)">← Voltar</button></div>
+                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(6, 'loading')">← Voltar</button></div>
                     <h3>🏠 O atendimento é para:</h3>
-                    <div class="quiz-options" style="grid-template-columns: 1fr; max-width: 400px; margin-inline: auto;">
+                    <div class="quiz-options">
                         <button class="quiz-btn" onclick="nextQuiz(6, 'loading', 'Residência', 'p6')"><i>🏠</i> Casa / Residência</button>
                         <button class="quiz-btn" onclick="nextQuiz(6, 'loading', 'Empresa / Escritório', 'p6')"><i>🏢</i> Empresa / Escritório</button>
                     </div>
@@ -846,18 +865,24 @@
                 <div class="quiz-step" id="stepLoading">
                     <div style="display: flex; flex-direction: column; align-items: center; padding: 3rem 0;">
                         <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/1_ipnatz.webp" alt="Loading" style="width: 60px; animation: pulseGlow 1.5s infinite;">
-                        <h3 class="text-accent" style="margin-top: 1.5rem;">Preparando seu pré-orçamento...</h3>
+                        <h3 class="text-accent" style="margin-top: 1.5rem;">Preparando seu resumo...</h3>
                     </div>
                 </div>
 
-                <!-- Final -->
+                <!-- Final / Summary -->
                 <div class="quiz-step" id="stepFinal">
-                    <h3 style="color: var(--cor-3); margin-bottom: 1rem;">Tudo pronto! ✨</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">As informações foram compiladas. Envie agora para nossa equipe no WhatsApp para receber valores e agendamento.</p>
+                    <h3 style="color: var(--cor-3); margin-bottom: 1.5rem;">Tudo pronto! ✨</h3>
+                    
+                    <!-- Resumo -->
+                    <div class="summary-box" id="summaryText">
+                        <!-- Preenchido via JS -->
+                    </div>
+                    
+                    <p style="font-size: 1.05rem; margin-bottom: 2rem;">Envie agora para nossa equipe no WhatsApp para receber valores e agendamento.</p>
                     <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                        <a href="#" id="quizWaLink" class="btn btn-wa" style="font-size: 1.15rem; padding: 1.2rem 2.5rem; width: 100%; max-width: 400px; display: inline-flex; justify-content: center;">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            Enviar p/ WhatsApp
+                        <a href="#" id="quizWaLink" class="btn btn-wa" style="font-size: 1.1rem; padding: 1.2rem 2rem; width: 100%; max-width: 400px; display: inline-flex; justify-content: center;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                            Enviar pré-orçamento pelo WhatsApp
                         </a>
                         <button class="quiz-back-btn" onclick="resetQuiz()" style="margin:0;">Refazer Quiz</button>
                     </div>
@@ -866,21 +891,8 @@
         </div>
     </section>
 
-    <!-- Elegant Divider (Water Drop) -->
-    <div class="elegant-divider reveal">
-        <div class="divider-line"></div>
-        <div class="divider-center">
-            💧
-            <div class="div-particle dp1"></div>
-            <div class="div-particle dp2"></div>
-            <div class="div-particle dp3"></div>
-        </div>
-        <div class="divider-line"></div>
-    </div>
-
     <!-- 10. Depoimentos Carousel (Infinito) -->
     <section id="depoimentos" class="section">
-        <!-- Snow/Water drop overlay specifically for testimonials -->
         <div class="snowflakes" aria-hidden="true">
             <div class="snowflake" style="left: 10%; animation-duration: 10s; animation-delay: 0s;">💧</div>
             <div class="snowflake" style="left: 30%; animation-duration: 12s; animation-delay: 2s;">💧</div>
@@ -899,13 +911,6 @@
                 <!-- Cards injected via JS -->
             </div>
         </div>
-        
-        <div class="container text-center" style="margin-top: 2rem; position:relative; z-index:2;">
-            <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Gostaria de falar com a equipe Jesus Clean.">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                Falar com a Jesus Clean
-            </a>
-        </div>
     </section>
 
     <!-- 11. Mapa / Atendimento RJ -->
@@ -923,8 +928,8 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         Atendimento em Domicílio
                     </div>
-                    <!-- Zoom 10 for Rio de Janeiro state/city area -->
-                    <iframe src="https://www.google.com/maps?q=Rio+de+Janeiro+-+RJ&z=10&output=embed" loading="lazy" allowfullscreen></iframe>
+                    <!-- Zoom 9 focuses well on the whole state/greater area -->
+                    <iframe src="https://www.google.com/maps?q=Estado+do+Rio+de+Janeiro&z=9&output=embed" loading="lazy" allowfullscreen></iframe>
                 </div>
 
                 <div class="map-info">
@@ -937,12 +942,12 @@
                         <span class="region-tag">Zona Oeste</span>
                         <span class="region-tag">Centro</span>
                         <span class="region-tag">Barra e Recreio</span>
-                        <span class="region-tag">Baixada (Consulta)</span>
+                        <span class="region-tag">Tijuca / Méier</span>
+                        <span class="region-tag">Baixada e Entorno (Consulta)</span>
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Gostaria de consultar se há atendimento para o meu bairro." style="justify-content: center;">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
                             Consultar atendimento no meu bairro
                         </a>
                         <a href="#" class="btn btn-glow wa-link" data-wa-msg="Olá! Gostaria de enviar minha localização para verificar atendimento." style="justify-content: center; font-size: 0.95rem; border:none; box-shadow:none;">
@@ -962,7 +967,7 @@
     </div>
 
     <!-- 13. Oferta Final -->
-    <section class="section text-center bg-waves" style="background-color: var(--cor-2);">
+    <section id="oferta" class="section text-center bg-waves" style="background-color: var(--cor-2);">
         <div class="container reveal">
             <h2>Seu estofado pode parecer <span class="text-accent">novo de novo</span></h2>
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 1.5rem; color: var(--cor-4);">
@@ -974,10 +979,11 @@
             
             <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                 <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site. Posso enviar a foto do meu estofado para avaliação?" style="padding: 1.2rem 2.5rem; font-size: 1.15rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
                     Enviar foto no WhatsApp
                 </a>
-                <a href="https://instagram.com/jesus.clean" target="_blank" class="btn btn-glow" style="padding: 1.2rem 2.5rem; font-size: 1.15rem;">
+                <a href="https://instagram.com/jesus.clean" target="_blank" class="btn btn-ig" style="padding: 1.2rem 2.5rem; font-size: 1.15rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     Ver Instagram
                 </a>
             </div>
@@ -992,7 +998,7 @@
     </div>
 
     <!-- 15. Footer -->
-    <footer>
+    <footer id="footer">
         <div class="container">
             <div class="footer-grid reveal">
                 <div class="footer-col">
@@ -1013,7 +1019,7 @@
                 <div class="footer-col">
                     <h4>Contato Direto</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="wa-link" style="color: var(--cor-whatsapp); font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Pedir orçamento no WhatsApp</a></li>
+                        <li><a href="#" class="wa-link" style="color: var(--cor-whatsapp); font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg> Pedir orçamento no WhatsApp</a></li>
                         <li><a href="https://instagram.com/jesus.clean" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> @jesus.clean no Instagram</a></li>
                         <li><span style="display:flex; align-items:center; gap:0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Atendimento RJ</span></li>
                     </ul>
@@ -1030,16 +1036,15 @@
     <!-- Ícones Flutuantes -->
     <div class="floating-icons">
         <a href="#" class="floating-icon float-wa wa-link" aria-label="WhatsApp">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
         </a>
         <a href="https://instagram.com/jesus.clean" target="_blank" class="floating-icon float-ig" aria-label="Instagram">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
     </div>
 
-    <!-- JS Scripts -->
     <script>
-        // 1. Preloader Logic (Extended time + smooth fade)
+        // 1. Preloader Logic (Increased time, smooth fade)
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
@@ -1048,7 +1053,7 @@
                     preloader.style.visibility = 'hidden';
                     preloader.remove();
                 }, 800); 
-            }, 2000); 
+            }, 2000); // 2s duration as requested
         });
 
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -1063,7 +1068,7 @@
             }
         });
 
-        // 3. Navbar iPhone Effect & Mobile Menu
+        // 3. Navbar iPhone Effect & Mobile Menu Link clicks
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 30) header.classList.add('scrolled');
@@ -1073,12 +1078,16 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+        
+        // Close menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('active'));
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
 
         // 4. Infinite Rollers
-        const texts1 = ["🧼 Higienização de estofados", "🛋️ Sofás", "🛏️ Colchões", "🪑 Poltronas", "🧶 Tapetes", "📍 Atendimento no RJ", "📱 Orçamento pelo WhatsApp"];
+        const texts1 = ["🧼 Higienização de estofados", "🛋️ Sofás", "🛏️ Colchões", "🪑 Poltronas", "🧶 Tapetes", "📍 Atendimento em todo RJ", "📱 Orçamento pelo WhatsApp"];
         const texts2 = ["✨ Limpeza profunda", "🌸 Remoção de odores", "🛋️ Sofá renovado", "🛡️ Cuidado com o tecido", "📅 Atendimento agendado", "👁️ Resultado visível"];
         const texts3 = ["📍 Atendimento em todo RJ", "📅 Agendamento pelo WhatsApp", "🏠 Higienização em domicílio", "🏢 Residencial e comercial"];
         const texts4 = ["🛋️ Sofá limpo", "🏠 Casa mais confortável", "😷 Adeus mau cheiro", "✨ Higienização profissional", "📍 Atendimento no RJ", "📱 Peça seu orçamento"];
@@ -1095,10 +1104,10 @@
             });
             track.innerHTML = html;
         }
-        populateRoller('track1', texts1); // Left
-        populateRoller('track2', texts2); // Right
-        populateRoller('track3', texts3); // Left
-        populateRoller('track4', texts4); // Right
+        populateRoller('track1', texts1); 
+        populateRoller('track2', texts2); 
+        populateRoller('track3', texts3); 
+        populateRoller('track4', texts4); 
 
         // 5. Scroll Reveal & Counters
         const revealElements = document.querySelectorAll('.reveal');
@@ -1176,6 +1185,17 @@
                     document.getElementById('stepFinal').classList.add('active');
                     bar.style.width = '100%';
                     
+                    // Build Summary Visual
+                    document.getElementById('summaryText').innerHTML = `
+                        <div class="summary-item"><strong>Peça:</strong> ${quizData.p1}</div>
+                        <div class="summary-item"><strong>Necessidade:</strong> ${quizData.p2}</div>
+                        <div class="summary-item"><strong>Foto:</strong> ${quizData.p3}</div>
+                        <div class="summary-item"><strong>Região:</strong> ${quizData.p4}</div>
+                        <div class="summary-item"><strong>Urgência:</strong> ${quizData.p5}</div>
+                        <div class="summary-item"><strong>Local:</strong> ${quizData.p6}</div>
+                    `;
+                    
+                    // Build WhatsApp URL
                     const customMsg = `Olá! Vim pelo site da Jesus Clean e fiz o pré-orçamento.%0A%0A*Peça:* ${quizData.p1}%0A*Necessidade:* ${quizData.p2}%0A*Foto:* ${quizData.p3}%0A*Região:* ${quizData.p4}%0A*Urgência:* ${quizData.p5}%0A*Local:* ${quizData.p6}%0A%0AGostaria de receber um orçamento.`;
                     document.getElementById('quizWaLink').href = `https://wa.me/5521980325724?text=${customMsg}`;
                     document.getElementById('quizWaLink').target = "_blank";
@@ -1231,7 +1251,6 @@
                 `;
             };
             testimonials.forEach(t => testiHtml += buildCard(t));
-            testimonials.forEach(t => testiHtml += buildCard(t)); 
             testimonials.forEach(t => testiHtml += buildCard(t)); 
             testiTrack.innerHTML = testiHtml;
         }
