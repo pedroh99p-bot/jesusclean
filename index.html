@@ -330,6 +330,8 @@
         .summary-item strong { color: var(--cor-3); }
 
         /* Testimonials Carousel (Infinito) */
+        @keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
         .testimonials-wrapper { position: relative; width: 100%; overflow: hidden; padding: 2rem 0 4rem; margin-top: 1rem; }
         .testimonials-wrapper::before, .testimonials-wrapper::after { content: ''; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none; }
         .testimonials-wrapper::before { left: 0; background: linear-gradient(to right, var(--cor-1), transparent); }
@@ -380,8 +382,9 @@
 
         /* Footer */
         footer { background: #04121C; padding: 5rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.03); position: relative; }
-        .footer-logo-img { height: 160px; max-width: 100%; opacity: 0.9; margin-bottom: 1.5rem; filter: grayscale(100%) brightness(200%); transition: var(--transition); object-fit: contain; }
+        .footer-logo-img { height: 160px; max-width: 100%; opacity: 0.9; margin: 0 auto 1.5rem; display: block; filter: grayscale(100%) brightness(200%); transition: var(--transition); object-fit: contain; }
         .footer-logo-img:hover { filter: none; opacity: 1; }
+        .footer-col:first-child { text-align: center; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 4rem; }
         .footer-col h4 { color: var(--cor-4); margin-bottom: 1.5rem; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; }
         .footer-links { list-style: none; }
@@ -400,7 +403,7 @@
         /* Responsive */
         @media (max-width: 992px) {
             .hero-content { align-items: center; text-align: center; }
-            .hero-content-inner { display: flex; flex-direction: column; align-items: center; text-align: left;} /* Left align inside center */
+            .hero-content-inner { display: flex; flex-direction: column; align-items: center; text-align: left;} 
             .hero-content-inner > * { width: 100%; text-align: left; }
             .hero-ctas { justify-content: flex-start; }
             .map-card { flex-direction: column; }
@@ -410,7 +413,7 @@
             header { width: 92%; top: 1rem; padding: 0.5rem 1rem; border-radius: 30px; }
             header.scrolled { width: 95%; top: 0.5rem; padding: 0.5rem 1rem; }
             
-            .logo-text { display: none; } /* Hide text logo on very small screens to save space */
+            .logo-text { display: block; height: 25px; margin-top: 2px; } /* Now visible and fitted on mobile */
             
             .nav-links {
                 position: absolute; top: 120%; left: 0; width: 100%; background: rgba(6, 40, 61, 0.95);
@@ -433,17 +436,17 @@
             .hero-ctas { flex-direction: column; width: 100%; }
             .hero-ctas .btn { width: 100%; justify-content: center; }
             
-            /* Flip Grid Mobile Layout: 2x2 */
-            .flip-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-            .flip-card { height: 240px; }
-            .flip-card-front { padding: 1.5rem 0.5rem; }
-            .flip-card-front .icon { font-size: 2rem; margin-bottom: 0.5rem; }
-            .flip-card-front h4 { font-size: 0.95rem; }
-            .tap-hint { font-size: 0.7rem; margin-top: 1rem; padding: 0.2rem 0.5rem;}
-            .flip-card-back { padding: 1rem 0.5rem; }
-            .flip-card-back .icon { font-size: 1.5rem; }
-            .flip-card-back p { font-size: 0.75rem; line-height: 1.2; margin-bottom: 0.5rem; }
-            .flip-card-back .btn-mini { font-size: 0.7rem; padding: 0.5rem; }
+            /* Flip Grid Mobile Layout: 2x2 Fixed */
+            .flip-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+            .flip-card { height: 220px; }
+            .flip-card-front { padding: 1rem 0.5rem; }
+            .flip-card-front h4 { font-size: 0.85rem; }
+            .flip-card-front .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+            .tap-hint { font-size: 0.65rem; margin-top: 0.5rem; padding: 0.2rem 0.4rem; }
+            .flip-card-back { padding: 0.8rem 0.5rem; }
+            .flip-card-back p { font-size: 0.65rem; line-height: 1.2; margin-bottom: 0.5rem; }
+            .flip-card-back .btn-mini { font-size: 0.65rem; padding: 0.4rem; }
+            .flip-card-back .icon { font-size: 1.2rem; margin-bottom: 0.3rem;}
             
             /* Specialist Mobile Overrides */
             .specialist-wrapper { padding: 2rem 1.5rem; }
@@ -458,8 +461,10 @@
 
             .swipe-hint { display: flex; }
             
-            .quiz-options { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .quiz-btn { padding: 1rem 0.5rem; font-size: 0.9rem; text-align: center; align-items: center;}
+            /* Quiz Options Fix Mobile Alignment */
+            .quiz-options { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+            .quiz-btn { padding: 1rem 0.5rem; flex-direction: column; justify-content: center; text-align: center; gap: 0.5rem; height: 100%; font-size: 0.85rem;}
+            .quiz-btn i { font-size: 1.8rem; margin-bottom: 0.2rem; }
             .quiz-container { padding: 2rem 1rem; }
             
             .review-card-elegant { width: 300px; padding: 1.5rem; }
@@ -538,9 +543,9 @@
                 </p>
 
                 <div class="hero-ctas">
-                    <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento para limpar meu sofá/estofado.">
+                    <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site e gostaria de um atendimento para higienizar meu estofado.">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
-                        Pedir orçamento no WhatsApp
+                        Atendimento no WhatsApp
                     </a>
                     <a href="#quiz" class="btn btn-glow">Fazer pré-orçamento</a>
                 </div>
@@ -563,7 +568,8 @@
                 <p>A limpeza comum não alcança sujeiras profundas, odores e impurezas acumuladas no tecido.</p>
             </div>
             
-            <div class="flip-grid reveal reveal-delay-1" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); max-width: 1000px; margin: 0 auto;">
+            <!-- Apenas 4 cards, forçando o Grid 2x2 no Mobile -->
+            <div class="flip-grid reveal reveal-delay-1" style="max-width: 900px; margin: 0 auto;">
                 
                 <!-- Card 1 -->
                 <div class="flip-card" onclick="this.classList.toggle('flipped')">
@@ -575,9 +581,9 @@
                         </div>
                         <div class="flip-card-back">
                             <div class="icon">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                             </div>
-                            <p>Higienização profunda para ajudar a remover odores e deixar o ambiente agradável.</p>
+                            <p>Higienização profunda para remover odores e deixar o ambiente agradável.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de resolver o problema de mau cheiro no meu sofá.">Resolver no WhatsApp</a>
                         </div>
                     </div>
@@ -593,7 +599,7 @@
                         </div>
                         <div class="flip-card-back">
                             <div class="icon">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                             </div>
                             <p>Avaliação do tecido e limpeza técnica para melhorar o aspecto do estofado.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de uma avaliação para as manchas no meu estofado.">Avaliar minha peça</a>
@@ -611,9 +617,9 @@
                         </div>
                         <div class="flip-card-back">
                             <div class="icon">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                             </div>
-                            <p>Processo profissional focado em deixar o estofado limpo e confortável para a família.</p>
+                            <p>Processo focado em deixar o estofado limpo e confortável para a família.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de higienizar meu estofado contra ácaros.">Quero higienizar</a>
                         </div>
                     </div>
@@ -629,9 +635,9 @@
                         </div>
                         <div class="flip-card-back">
                             <div class="icon">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                             </div>
-                            <p>Limpeza especializada para recuperar a sensação de cuidado e renovar o visual da peça.</p>
+                            <p>Limpeza especializada para renovar o visual e recuperar o brilho da peça.</p>
                             <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de um orçamento para renovar meu estofado.">Pedir orçamento</a>
                         </div>
                     </div>
@@ -641,7 +647,7 @@
         </div>
     </section>
 
-    <!-- Elegant Divider (Drop) -->
+    <!-- Elegant Divider (Water Drop variant) -->
     <div class="elegant-divider reveal">
         <div class="divider-line"></div>
         <div class="divider-center">
@@ -675,7 +681,7 @@
                 
                 <div class="stats-wrap">
                     <div class="stat-card-elegant">
-                        <div class="num"><span data-prefix="+ "></span><span class="counter" data-target="500">0</span></div>
+                        <div class="num"><span data-prefix="+ "></span><span class="counter" data-target="5000">0</span></div>
                         <div class="lbl">Clientes Satisfeitos</div>
                     </div>
                     <div class="stat-card-elegant">
@@ -1044,7 +1050,7 @@
     </div>
 
     <script>
-        // 1. Preloader Logic (Increased time, smooth fade)
+        // 1. Preloader Logic
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
@@ -1053,7 +1059,7 @@
                     preloader.style.visibility = 'hidden';
                     preloader.remove();
                 }, 800); 
-            }, 2000); // 2s duration as requested
+            }, 2000); // 2s duration
         });
 
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -1079,14 +1085,13 @@
         const navLinks = document.getElementById('navLinks');
         mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
         
-        // Close menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // 4. Infinite Rollers
+        // 4. Infinite Rollers (com emojis)
         const texts1 = ["🧼 Higienização de estofados", "🛋️ Sofás", "🛏️ Colchões", "🪑 Poltronas", "🧶 Tapetes", "📍 Atendimento em todo RJ", "📱 Orçamento pelo WhatsApp"];
         const texts2 = ["✨ Limpeza profunda", "🌸 Remoção de odores", "🛋️ Sofá renovado", "🛡️ Cuidado com o tecido", "📅 Atendimento agendado", "👁️ Resultado visível"];
         const texts3 = ["📍 Atendimento em todo RJ", "📅 Agendamento pelo WhatsApp", "🏠 Higienização em domicílio", "🏢 Residencial e comercial"];
@@ -1109,7 +1114,7 @@
         populateRoller('track3', texts3); 
         populateRoller('track4', texts4); 
 
-        // 5. Scroll Reveal & Counters
+        // 5. Scroll Reveal & Counters (Corrigido para + 5.000 e lento)
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -1119,7 +1124,7 @@
                     const counters = entry.target.querySelectorAll('.counter');
                     counters.forEach(counter => {
                         const target = +counter.getAttribute('data-target');
-                        const duration = 2000; 
+                        const duration = 2500; // Tempo aumentado para contar mais devagar
                         const increment = target / (duration / 16);
                         let current = 0;
                         const updateCounter = () => {
@@ -1128,7 +1133,8 @@
                                 counter.innerText = Math.ceil(current);
                                 requestAnimationFrame(updateCounter);
                             } else {
-                                counter.innerText = target;
+                                // Formatar corretamente
+                                counter.innerText = target === 5000 ? "5.000" : target;
                                 const prefixEl = counter.parentElement.querySelector('span[data-prefix]');
                                 if(prefixEl) prefixEl.innerText = prefixEl.getAttribute('data-prefix');
                             }
@@ -1219,7 +1225,7 @@
             quizData = { p1: '', p2: '', p3: '', p4: '', p5: '', p6: '' };
         }
 
-        // 8. Testimonials (Infinite Marquee)
+        // 8. Testimonials (Infinite Marquee agora com as Keyframes via CSS e montagem dinâmica)
         const testimonials = [
             { name: "Maria Fernanda", role: "Zona Sul, RJ", text: "Meu sofá estava com manchas escuras e mau cheiro do cachorro. Eles deixaram como novo e muito cheiroso!" },
             { name: "Carlos Eduardo", role: "Barra da Tijuca, RJ", text: "Fiz a limpeza dos colchões aqui de casa. O resultado da água que saiu foi assustador. Recomendo muito pela saúde." },
