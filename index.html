@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jesus Clean | Higienização Profissional de Estofados no RJ</title>
+    <meta name="description" content="Especialistas em higienização e limpeza de sofás, colchões, tapetes e poltronas no Rio de Janeiro. Orçamento rápido pelo WhatsApp.">
+    <meta name="theme-color" content="#06283D">
+    
+    <link rel="icon" type="image/webp" href="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/1_ipnatz.webp">
+    
+    <!-- Google Fonts: Inter para corpo, Outfit para títulos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Premium Clean Palette */
+            --cor-1: #06283D;      /* Azul Escuro (Backgrounds) */
+            --cor-2: #08131D;      /* Grafite (Cards/Surfaces) */
+            --cor-3: #00AEEF;      /* Azul Limpeza (Accents & Glows) */
+            --cor-4: #F8FCFF;      /* Branco Suave */
+            --cor-5: #DCE7EF;      /* Cinza Claro (Muted Text) */
+            --cor-agua: #2EE6A6;   /* Verde Água (Secundário) */
+            --cor-whatsapp: #25D366;
+            --cor-whatsapp-hover: #1EBE5D;
+            --cor-erro: #E31E24;   /* Para frente dos Flip Cards */
+            
+            --bg-glass: rgba(8, 19, 29, 0.6);
+            --border-glass: rgba(0, 174, 239, 0.15);
+            --border-glow: rgba(0, 174, 239, 0.4);
+
+            /* Typography */
+            --font-title: 'Outfit', sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            
+            /* Transitions */
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Base & Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cor-1);
+            color: var(--cor-4);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Backgrounds & Textures */
+        .bg-bubbles {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='5' fill='none' stroke='%2300AEEF' stroke-width='1' stroke-opacity='0.1'/%3E%3Ccircle cx='80' cy='60' r='12' fill='none' stroke='%2300AEEF' stroke-width='1' stroke-opacity='0.05'/%3E%3Ccircle cx='40' cy='80' r='3' fill='none' stroke='%2300AEEF' stroke-width='1' stroke-opacity='0.1'/%3E%3C/svg%3E");
+            background-size: 150px 150px;
+        }
+        .bg-waves {
+            background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 15px);
+        }
+        .bg-dots {
+            background-image: radial-gradient(rgba(0, 174, 239, 0.15) 1.5px, transparent 1.5px);
+            background-size: 25px 25px;
+        }
+        
+        /* Drop Animation for Testimonials Background */
+        @keyframes fall { 0% { transform: translateY(-100px) rotate(0deg); opacity: 0; } 20% { opacity: 0.5; } 80% { opacity: 0.5; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+        .snowflakes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .snowflake { position: absolute; color: rgba(255, 255, 255, 0.15); font-size: 1.2rem; filter: blur(1px); animation: fall linear infinite; }
+
+        /* Preloader */
+        #preloader {
+            position: fixed; inset: 0; background: var(--cor-1); z-index: 9999;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+            background-image: radial-gradient(circle at center, rgba(0, 174, 239, 0.15) 0%, var(--cor-1) 70%);
+        }
+        .preloader-logo { 
+            width: 220px; max-width: 80%; animation: pulse-logo 2s ease-in-out infinite alternate; 
+            margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(0, 174, 239, 0.4)); object-fit: contain;
+        }
+        .preloader-bar-container {
+            width: 200px; height: 4px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+        }
+        .preloader-bar {
+            height: 100%; background: linear-gradient(90deg, var(--cor-3), var(--cor-agua));
+            width: 0%; animation: load-bar 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes pulse-logo { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.05); opacity: 1; } }
+        @keyframes load-bar { 0% { width: 0%; } 40% { width: 50%; } 100% { width: 100%; } }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-family: var(--font-title); line-height: 1.15; font-weight: 700; }
+        h1 { font-size: clamp(2.2rem, 5vw, 4.2rem); margin-bottom: 1rem; letter-spacing: -1px; }
+        h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; letter-spacing: -0.5px; }
+        h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
+        p { color: var(--cor-5); font-size: 1.05rem; font-weight: 300; }
+        .text-gradient { background: linear-gradient(180deg, #FFFFFF 0%, var(--cor-5) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-accent { color: var(--cor-3); text-shadow: 0 0 20px rgba(0, 174, 239, 0.4); }
+
+        /* Layout & Spacing */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 2; }
+        .section { padding: 6rem 0; position: relative; } 
+        .text-center { text-align: center; }
+        .grid { display: grid; gap: 2rem; }
+
+        /* Glass Card Base */
+        .glass-card {
+            background: var(--bg-glass); border: 1px solid var(--border-glass);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-radius: 20px; padding: 2.5rem; transition: var(--transition);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+            position: relative; overflow: hidden;
+        }
+        .glass-card:hover { border-color: var(--border-glow); transform: translateY(-5px); background: rgba(8, 19, 29, 0.8); }
+
+        /* Elegant Dividers (Water Drop variant) */
+        .elegant-divider { display: flex; align-items: center; justify-content: center; padding: 3rem 0; opacity: 0; transform: translateY(20px); transition: all 1s ease; position: relative; z-index: 2; }
+        .elegant-divider.active { opacity: 1; transform: translateY(0); }
+        .divider-line { height: 1px; width: 120px; background: linear-gradient(90deg, transparent, rgba(0,174,239,0.5), transparent); position: relative; }
+        .divider-center { position: relative; margin: 0 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--cor-3); text-shadow: 0 0 10px rgba(0,174,239,0.6); }
+        .div-particle { position: absolute; border-radius: 50%; background: var(--cor-3); opacity: 0.6; filter: blur(1px); }
+        .dp1 { width: 6px; height: 6px; top: -10px; left: -10px; animation: floatUp 3s infinite alternate; }
+        .dp2 { width: 4px; height: 4px; bottom: -5px; right: -15px; animation: floatUp 4s infinite alternate-reverse; }
+        .dp3 { width: 3px; height: 3px; top: 5px; right: -8px; animation: pulseGlow 2s infinite; }
+        
+        @keyframes floatUp { 0% { transform: translateY(0) scale(1); opacity: 0.3; } 100% { transform: translateY(-15px) scale(1.5); opacity: 0.8; } }
+        @keyframes pulseGlow { 0%, 100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 10px var(--cor-3); } }
+
+        /* Buttons & CTAs */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 1.1rem 2.2rem; border-radius: 50px; font-weight: 600; font-family: var(--font-title);
+            font-size: 1.05rem; text-decoration: none; transition: var(--transition);
+            cursor: pointer; border: none; gap: 0.6rem; letter-spacing: 0.5px; position: relative; overflow: hidden;
+            text-align: center;
+        }
+        .btn-wa { 
+            background-color: var(--cor-whatsapp); color: #fff; 
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3), inset 0 2px 0 rgba(255,255,255,0.2); 
+        }
+        .btn-wa:hover { 
+            background-color: var(--cor-whatsapp-hover); transform: translateY(-3px); 
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6), inset 0 2px 0 rgba(255,255,255,0.2); 
+        }
+        .btn-glow {
+            background: rgba(8, 19, 29, 0.6); color: var(--cor-3); border: 1px solid var(--cor-3);
+            box-shadow: 0 0 15px rgba(0, 174, 239, 0.1); backdrop-filter: blur(5px);
+        }
+        .btn-glow:hover {
+            background: rgba(0, 174, 239, 0.1); color: #fff;
+            box-shadow: 0 0 25px rgba(0, 174, 239, 0.4);
+            border-color: #fff; transform: translateY(-3px);
+        }
+        /* Instagram Button */
+        .btn-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff; border: none;
+            box-shadow: 0 8px 25px rgba(220, 39, 67, 0.3), inset 0 2px 0 rgba(255,255,255,0.2);
+        }
+        .btn-ig:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(220, 39, 67, 0.6), inset 0 2px 0 rgba(255,255,255,0.2);
+        }
+
+        /* Navbar iPhone Style */
+        header {
+            position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 100;
+            width: 95%; max-width: 850px; padding: 0.6rem 1rem;
+            background: rgba(6, 40, 61, 0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-radius: 50px; border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+        header.scrolled {
+            top: 0.8rem; width: 90%; background: rgba(6, 40, 61, 0.85);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 15px rgba(0, 174, 239, 0.1);
+            border-color: rgba(0, 174, 239, 0.3); padding: 0.5rem 1rem;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        
+        .logo-nav-container { display: flex; align-items: center; height: 35px; width: 50px; }
+        .logo-nav { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 5px rgba(0,174,239,0.5)); transition: var(--transition); }
+        
+        .nav-links { display: flex; gap: 1.5rem; align-items: center; margin-left: auto; }
+        .nav-links a.menu-link { 
+            color: var(--cor-4); text-decoration: none; font-weight: 500; font-size: 0.9rem;
+            font-family: var(--font-body); transition: var(--transition); opacity: 0.8;
+        }
+        .nav-links a.menu-link:hover { color: var(--cor-3); opacity: 1; }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--cor-4); font-size: 1.5rem; cursor: pointer; padding: 0.3rem; }
+
+        /* Hero Section */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 6rem; overflow: hidden; }
+        .hero-bg { 
+            position: absolute; inset: 0; z-index: 0;
+            background-image: url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1780167288/Design_sem_nome_3_retelj.png');
+            background-size: cover; background-position: center;
+        }
+        .hero-bg::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to right, rgba(6, 40, 61, 0.95) 0%, rgba(6, 40, 61, 0.7) 50%, rgba(6, 40, 61, 0.2) 100%);
+        }
+        
+        .hero-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+        .hero-content-inner { max-width: 650px; }
+        
+        .badge-premium {
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; border-radius: 50px;
+            background: rgba(0, 174, 239, 0.15); border: 1px solid var(--border-glass);
+            color: #fff; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 1.5rem; backdrop-filter: blur(5px);
+        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; justify-content: flex-start; }
+
+        /* Rollers / Infinite Marquee */
+        .roller-wrapper { background: var(--cor-2); padding: 1.2rem 0; border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03); overflow: hidden; position: relative; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); z-index: 2; }
+        .roller-wrapper::before, .roller-wrapper::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none; }
+        .roller-wrapper::before { left: 0; background: linear-gradient(to right, var(--cor-2), transparent); }
+        .roller-wrapper::after { right: 0; background: linear-gradient(to left, var(--cor-2), transparent); }
+        
+        .roller-track-left { display: flex; white-space: nowrap; width: max-content; animation: scroll-left 35s linear infinite; }
+        .roller-track-right { display: flex; white-space: nowrap; width: max-content; animation: scroll-right 35s linear infinite; }
+        
+        .roller-item { display: inline-flex; align-items: center; font-family: var(--font-title); font-size: 1.1rem; font-weight: 500; padding: 0 2rem; color: var(--cor-5); letter-spacing: 0.5px; }
+        
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+        /* Flip Cards */
+        .flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; perspective: 1000px; }
+        .flip-card { background-color: transparent; height: 260px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); } /* Hover Desktop */
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } /* Toque Mobile */
+        
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1rem; }
+        
+        .flip-card-front { background: linear-gradient(135deg, rgba(227, 30, 36, 0.1), rgba(8, 19, 29, 0.8)); border: 1px solid rgba(227, 30, 36, 0.3); color: var(--cor-4); }
+        .flip-card-front .icon { font-size: 2.5rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(227, 30, 36, 0.5)); }
+        .flip-card-front h4 { font-size: 1.1rem; line-height: 1.3; }
+        .tap-hint { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 1.5rem; animation: pulse-opacity 2s infinite; font-weight: 300; }
+        @keyframes pulse-opacity { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        
+        .flip-card-back { background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(8, 19, 29, 0.9)); border: 1px solid rgba(37, 211, 102, 0.4); color: var(--cor-4); transform: rotateY(180deg); padding: 1.5rem; justify-content: space-between; }
+        .flip-card-back p { font-size: 0.9rem; margin-bottom: 1rem; color: var(--cor-4); font-weight: 400; line-height: 1.4; }
+        .flip-card-back .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .flip-card-back .btn-mini { background: var(--cor-whatsapp); color: #fff; text-decoration: none; padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; width: 100%; transition: var(--transition); box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
+        .flip-card-back .btn-mini:hover { background: var(--cor-whatsapp-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5); }
+
+        /* Specialist Section */
+        .specialist-section { position: relative; z-index: 2; }
+        .specialist-wrapper { display: flex; flex-direction: row; gap: 3rem; align-items: center; background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); }
+        
+        .specialist-col-left { flex: 0 0 320px; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+        .badge-specialist { background: rgba(0,174,239,0.1); color: var(--cor-3); font-family: var(--font-title); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; padding: 0.4rem 1.2rem; border-radius: 20px; border: 1px solid rgba(0,174,239,0.2); margin-bottom: 1.5rem; z-index: 2; text-transform: uppercase; }
+        
+        .specialist-img-box { width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); position: relative; margin-bottom: 1.5rem; }
+        .specialist-img-box::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,40,61,0.6), transparent); opacity: 0.8; }
+        .specialist-img-box img { width: 100%; height: auto; display: block; aspect-ratio: 4/5; object-fit: cover; }
+        .specialist-name { font-size: 1.8rem; color: var(--cor-4); margin-bottom: 0.2rem; }
+        .specialist-role { font-size: 1rem; color: var(--cor-3); font-weight: 500; }
+        
+        .specialist-col-right { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .specialist-col-right p { margin-bottom: 2rem; font-size: 1.15rem; line-height: 1.7; color: var(--cor-4); font-weight: 300; }
+        
+        .stats-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+        .stat-card-elegant { 
+            background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); 
+            padding: 1.5rem 1rem; border-radius: 12px; text-align: center; transition: var(--transition);
+        }
+        .stat-card-elegant:hover { background: rgba(0,174,239,0.05); border-color: rgba(0,174,239,0.2); transform: translateY(-3px); }
+        .stat-card-elegant .num { font-family: var(--font-title); font-size: 2.2rem; font-weight: 800; color: var(--cor-4); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,174,239,0.3); display: flex; align-items: center; justify-content: center; gap: 2px; }
+        .stat-card-elegant .lbl { font-size: 0.85rem; color: var(--cor-5); font-weight: 400; line-height: 1.3; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Services Carousel */
+        .services-carousel-wrapper { width: 100%; overflow: hidden; padding: 1rem 0 3rem; cursor: grab; margin-top: 2rem; -webkit-overflow-scrolling: touch; }
+        .services-carousel-wrapper:active { cursor: grabbing; }
+        .services-track { display: flex; gap: 1.5rem; padding: 0 1.5rem; width: max-content; transition: transform 0.1s ease-out; }
+        .service-card {
+            background: rgba(8, 19, 29, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px;
+            padding: 2.5rem 2rem; width: 320px; display: flex; flex-direction: column; flex-shrink: 0;
+            transition: var(--transition); user-select: none; backdrop-filter: blur(10px);
+        }
+        .service-card:hover { border-color: var(--cor-3); transform: translateY(-8px); background: rgba(8, 19, 29, 0.8); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        .service-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+        .service-icon { font-size: 2.5rem; display: inline-block; padding: 0.8rem; background: rgba(0,174,239,0.05); border-radius: 12px; border: 1px solid rgba(0,174,239,0.1); line-height: 1; }
+        .service-time { font-size: 0.8rem; font-weight: 600; color: var(--cor-3); background: rgba(0, 174, 239, 0.08); padding: 0.4rem 0.8rem; border-radius: 50px; display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-title); letter-spacing: 0.5px; border: 1px solid rgba(0, 174, 239, 0.2); }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--cor-4); }
+        .service-card p { font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; color: var(--cor-5); font-weight: 300; line-height: 1.5; }
+        .mini-cta {
+            background: rgba(37, 211, 102, 0.1); color: var(--cor-whatsapp); border: 1px solid rgba(37, 211, 102, 0.2);
+            padding: 0.8rem; border-radius: 10px; text-align: center; font-weight: 600; font-size: 0.95rem;
+            text-decoration: none; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-title);
+        }
+        .mini-cta:hover { background: var(--cor-whatsapp); color: #fff; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); border-color: var(--cor-whatsapp); }
+
+        /* Quiz Container */
+        .quiz-container { max-width: 750px; margin: 0 auto; text-align: center; padding: 3rem; }
+        .quiz-step { display: none; animation: fadeIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .quiz-step.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .quiz-progress { height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; margin-bottom: 2.5rem; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.5); }
+        .quiz-bar { height: 100%; background: var(--cor-3); width: 0%; transition: width 0.5s ease; box-shadow: 0 0 10px var(--cor-3); }
+        
+        .quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .quiz-btn {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 1.2rem; border-radius: 12px;
+            color: var(--cor-4); font-family: var(--font-body); font-size: 1.05rem; font-weight: 500;
+            cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: flex-start; gap: 1rem; text-align: left;
+        }
+        .quiz-btn:hover { background: rgba(0, 174, 239, 0.08); border-color: var(--cor-3); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,174,239,0.1); color: #fff; }
+        .quiz-btn i { font-style: normal; font-size: 1.5rem; }
+        
+        .quiz-back-btn {
+            background: none; border: none; color: var(--cor-5); font-size: 0.95rem; font-family: var(--font-body);
+            cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .quiz-back-btn:hover { color: var(--cor-3); }
+
+        /* Testimonials Carousel (Infinito) */
+        .testimonials-wrapper { position: relative; width: 100%; overflow: hidden; padding: 2rem 0 4rem; margin-top: 1rem; }
+        .testimonials-wrapper::before, .testimonials-wrapper::after { content: ''; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none; }
+        .testimonials-wrapper::before { left: 0; background: linear-gradient(to right, var(--cor-1), transparent); }
+        .testimonials-wrapper::after { right: 0; background: linear-gradient(to left, var(--cor-1), transparent); }
+        
+        .testi-track { display: flex; width: max-content; animation: scroll-marquee 45s linear infinite; gap: 2rem; padding: 0 1rem; }
+        .testimonials-wrapper:hover .testi-track { animation-play-state: paused; }
+        @keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
+        .review-card-elegant {
+            background: rgba(8, 19, 29, 0.5); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px;
+            padding: 2.5rem; width: 400px; display: flex; flex-direction: column; gap: 1.2rem;
+            white-space: normal; transition: var(--transition); flex-shrink: 0; user-select: none;
+            backdrop-filter: blur(10px); z-index: 2;
+        }
+        .review-card-elegant:hover { border-color: rgba(0,174,239,0.3); transform: translateY(-5px); background: rgba(8, 19, 29, 0.9); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+        .review-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .review-user { display: flex; align-items: center; gap: 1rem; }
+        .review-avatar { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--cor-2), var(--cor-1)); display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-weight: 700; font-size: 1.2rem; color: var(--cor-3); border: 1px solid rgba(0,174,239,0.3); }
+        .review-name { font-family: var(--font-title); font-weight: 600; font-size: 1.1rem; color: var(--cor-4); line-height: 1.2; }
+        .review-role { font-size: 0.8rem; color: var(--cor-5); }
+        .stars { color: #FBBF24; font-size: 1.3rem; letter-spacing: 2px; line-height: 1; margin-top: 0.5rem;}
+        .review-text { font-size: 1rem; font-style: italic; color: var(--cor-4); font-weight: 300; line-height: 1.6; }
+
+        /* Map Section */
+        .map-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+        @media (min-width: 768px) { .map-card { flex-direction: row; align-items: stretch; } }
+        
+        .map-iframe-container { flex: 1; position: relative; min-height: 350px; }
+        .map-overlay-badge { position: absolute; top: 1.5rem; left: 1.5rem; background: rgba(6,40,61,0.85); backdrop-filter: blur(10px); padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid rgba(0,174,239,0.3); color: var(--cor-4); font-weight: 600; z-index: 2; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .map-iframe-container iframe { width: 100%; height: 100%; border: none; filter: invert(90%) hue-rotate(180deg) saturate(150%) brightness(85%) contrast(110%); object-fit: cover; }
+        
+        .map-info { flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center; background: rgba(8, 19, 29, 0.4); }
+        .map-info h3 { color: var(--cor-3); margin-bottom: 0.5rem; font-weight: 600; }
+        .map-info p { margin-bottom: 1.5rem; font-size: 1rem; color: var(--cor-5); }
+        .region-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+        .region-item { display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--cor-4); font-weight: 300; }
+        .region-item svg { width: 18px; height: 18px; color: var(--cor-3); opacity: 0.8; flex-shrink: 0; }
+
+        /* Floating Icons (Bottom Right) */
+        .floating-icons { position: fixed; bottom: 2rem; right: 2rem; display: flex; flex-direction: column; gap: 1rem; z-index: 99; }
+        .floating-icon { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: var(--transition); border: 1px solid rgba(255,255,255,0.1); text-decoration: none; }
+        .floating-icon:hover { transform: scale(1.1) translateY(-5px); }
+        .float-wa { background-color: var(--cor-whatsapp); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+        .float-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+        /* Footer */
+        footer { background: #04121C; padding: 5rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.03); position: relative; }
+        .footer-logo-img { height: 120px; max-width: 100%; opacity: 0.9; margin-bottom: 1.5rem; filter: grayscale(100%) brightness(200%); transition: var(--transition); object-fit: contain; }
+        .footer-logo-img:hover { filter: none; opacity: 1; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 4rem; }
+        .footer-col h4 { color: var(--cor-4); margin-bottom: 1.5rem; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 1rem; }
+        .footer-links a { color: var(--cor-5); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 300; }
+        .footer-links a:hover { color: var(--cor-3); transform: translateX(5px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+        .montana-signature { font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0.5; transition: var(--transition); text-decoration: none; color: inherit; }
+        .montana-signature:hover { opacity: 1; color: var(--cor-3); }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .specialist-wrapper { flex-direction: column; text-align: center; }
+            .specialist-col-left { flex: 0 0 auto; width: 100%; max-width: 350px; margin: 0 auto; }
+            .specialist-col-right { text-align: center; }
+            .specialist-col-right p { font-size: 1.05rem; }
+            .stats-wrap { justify-content: center; }
+            .hero-content { align-items: center; text-align: center; }
+            .hero-content-inner { display: flex; flex-direction: column; align-items: center; }
+            .hero-ctas { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            header { width: 92%; top: 1rem; padding: 0.5rem 1rem; border-radius: 30px; }
+            header.scrolled { width: 95%; top: 0.5rem; padding: 0.5rem 1rem; }
+            .nav-links {
+                position: absolute; top: 120%; left: 0; width: 100%; background: rgba(6, 40, 61, 0.95);
+                flex-direction: column; padding: 2rem; gap: 1.5rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease; backdrop-filter: blur(15px);
+            }
+            .nav-links.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+            .nav-links a.menu-link { display: none; }
+            .mobile-menu-btn { display: block; }
+            
+            .hero { padding-top: 7.5rem; text-align: left; }
+            .hero-content { align-items: flex-start; }
+            .hero-content-inner { align-items: flex-start; }
+            .hero-ctas { flex-direction: column; width: 100%; }
+            .hero-ctas .btn { width: 100%; justify-content: center; }
+            
+            /* Flip Grid Mobile Layout: 2x2 */
+            .flip-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .flip-card { height: 260px; }
+            .flip-card-front .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+            .flip-card-front h4 { font-size: 0.95rem; }
+            .flip-card-back { padding: 1rem; }
+            .flip-card-back .icon { font-size: 1.2rem; }
+            .flip-card-back p { font-size: 0.75rem; line-height: 1.2; margin-bottom: 0.5rem; }
+            .flip-card-back .btn-mini { font-size: 0.7rem; padding: 0.5rem; }
+            
+            .specialist-wrapper { padding: 1.5rem; }
+            .badge-specialist { font-size: 0.7rem; padding: 0.3rem 0.8rem; margin-bottom: 1rem; }
+            .specialist-img-box { margin-bottom: 1rem; }
+            
+            .quiz-options { grid-template-columns: 1fr; }
+            .quiz-container { padding: 2rem 1.5rem; }
+            
+            .review-card-elegant { width: 320px; padding: 1.5rem; }
+            
+            .map-info { padding: 2rem; }
+            .region-grid { grid-template-columns: 1fr; }
+            
+            .floating-icons { bottom: 1rem; right: 1rem; }
+            .floating-icon { width: 45px; height: 45px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Preloader -->
+    <div id="preloader">
+        <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163972/4c1cd565-a380-4d2d-85ff-5d7f244fef68_1_huy4fa.webp" alt="Jesus Clean" class="preloader-logo">
+        <div class="preloader-bar-container">
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar iPhone Style -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo-nav-container" aria-label="Home">
+                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/1_ipnatz.webp" alt="Jesus Clean Icon" class="logo-nav">
+            </a>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#servicos" class="menu-link">Serviços</a>
+                <a href="#especialista" class="menu-link">Especialista</a>
+                <a href="#depoimentos" class="menu-link">Avaliações</a>
+                <a href="#mapa" class="menu-link">Atendimento</a>
+                <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento." style="padding: 0.5rem 1.2rem; font-size: 0.9rem; border-radius: 50px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    WhatsApp
+                </a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section (Alinhado à esquerda) -->
+    <section class="hero bg-bubbles">
+        <div class="hero-bg"></div>
+        <div class="container hero-content reveal">
+            <div class="hero-content-inner">
+                <div class="badge-premium">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Atendimento Exclusivo no RJ
+                </div>
+                
+                <h1 class="text-gradient">Seu sofá limpo, cheiroso e <span class="text-accent">renovado sem sair de casa</span></h1>
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                    Higienização profissional de estofados no Rio de Janeiro com atendimento agendado, cuidado com o tecido e resultado visível na primeira sessão.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site e gostaria de um orçamento para limpar meu sofá/estofado.">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Atendimento no WhatsApp
+                    </a>
+                    <a href="#quiz" class="btn btn-glow">Fazer pré-orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Roller 1 -->
+    <div class="roller-wrapper">
+        <div class="roller-track-left" id="track1">
+            <!-- Items via JS -->
+        </div>
+    </div>
+
+    <!-- 5. Cards Flip Dor / Solução -->
+    <section class="section bg-waves">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 3rem;">
+                <h2>Seu estofado pode estar <span class="text-accent">mais sujo do que parece</span></h2>
+                <p>A limpeza comum não alcança sujeiras profundas, odores e impurezas acumuladas no tecido.</p>
+            </div>
+            
+            <div class="flip-grid reveal reveal-delay-1">
+                <!-- Card 1 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icon">❌</div>
+                            <h4>Mau cheiro no sofá</h4>
+                            <div class="tap-hint">👆 Toque para virar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icon">🛡️</div>
+                            <p>Higienização profunda para ajudar a remover odores e deixar o ambiente agradável.</p>
+                            <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de resolver o problema de mau cheiro no meu sofá.">Resolver no WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icon">❌</div>
+                            <h4>Manchas aparentes</h4>
+                            <div class="tap-hint">👆 Toque para virar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icon">🛡️</div>
+                            <p>Avaliação do tecido e limpeza técnica para melhorar muito o aspecto do estofado.</p>
+                            <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de uma avaliação para as manchas no meu estofado.">Avaliar minha peça</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icon">❌</div>
+                            <h4>Ácaros e impurezas</h4>
+                            <div class="tap-hint">👆 Toque para virar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icon">🛡️</div>
+                            <p>Processo profissional focado em deixar o estofado limpo e confortável para a família.</p>
+                            <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Gostaria de higienizar meu estofado contra ácaros.">Quero higienizar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="icon">❌</div>
+                            <h4>Pet e Crianças</h4>
+                            <div class="tap-hint">👆 Toque para virar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="icon">🛡️</div>
+                            <p>Ideal para casas com alto uso diário, mantendo estofados limpos e agradáveis.</p>
+                            <a href="#" class="btn-mini wa-link" data-wa-msg="Olá! Tenho pet/criança e preciso higienizar meu estofado.">Falar com a equipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegant Divider (Water Drop) -->
+    <div class="elegant-divider reveal">
+        <div class="divider-line"></div>
+        <div class="divider-center">
+            💧
+            <div class="div-particle dp1"></div>
+            <div class="div-particle dp2"></div>
+            <div class="div-particle dp3"></div>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- 6. Specialist Section -->
+    <section id="especialista" class="section specialist-section">
+        <div class="container reveal">
+            <div class="specialist-wrapper glass-card">
+                <div class="specialist-col-left">
+                    <div class="badge-specialist">O Especialista</div>
+                    <div class="specialist-img-box">
+                        <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780161811/b03519e2-45e8-4824-a539-8ad03e271cfa_yngmoi.webp" alt="Igor Jesus">
+                    </div>
+                    <h3 class="specialist-name">Igor Jesus</h3>
+                    <p class="specialist-role">Fundador da Jesus Clean</p>
+                </div>
+                
+                <div class="specialist-col-right">
+                    <p>
+                        Igor Jesus lidera a Jesus Clean com foco em cuidado, pontualidade e resultado visível. Cada atendimento é feito com atenção extrema ao tecido, orientação clara e o compromisso em entregar um estofado mais limpo, confortável e agradável para sua casa ou empresa.
+                    </p>
+                    
+                    <div class="stats-wrap">
+                        <div class="stat-card-elegant">
+                            <div class="num"><span data-prefix="+ "></span><span class="counter" data-target="5000">0</span></div>
+                            <div class="lbl">Clientes Satisfeitos</div>
+                        </div>
+                        <div class="stat-card-elegant">
+                            <div class="num"><span class="counter" data-target="100">0</span><span>%</span></div>
+                            <div class="lbl">Atendimento no RJ</div>
+                        </div>
+                        <div class="stat-card-elegant">
+                            <div class="num"><span class="counter" data-target="5">0</span><span style="font-size:1.5rem; color:var(--cor-3); margin-top:-5px;">★</span></div>
+                            <div class="lbl">Qualidade Profissional</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;">
+                        <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá Igor! Vim pelo site e gostaria de conversar sobre a higienização do meu estofado.">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            Falar com Igor
+                        </a>
+                        <a href="https://instagram.com/jesus.clean" target="_blank" class="btn btn-ig">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            Acompanhar no Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegant Divider (Water Drop) -->
+    <div class="elegant-divider reveal">
+        <div class="divider-line"></div>
+        <div class="divider-center">
+            💧
+            <div class="div-particle dp1"></div>
+            <div class="div-particle dp2"></div>
+            <div class="div-particle dp3"></div>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- 7. Services Carousel -->
+    <section id="servicos" class="section bg-dots">
+        <div class="container text-center reveal">
+            <h2>Soluções completas para a <span class="text-accent">sua casa</span></h2>
+            <p>Arraste para o lado e conheça nossos tratamentos de limpeza.</p>
+        </div>
+        
+        <div class="services-carousel-wrapper reveal reveal-delay-1" id="servicesCarousel">
+            <div class="services-track" id="servicesTrack">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🛋️</div>
+                        <div class="service-time">⏱️ 1h a 2h</div>
+                    </div>
+                    <h3>Higienização de Sofá</h3>
+                    <p>Limpeza profunda que remove manchas, encardido e devolve o conforto à sua sala de estar.</p>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização do meu sofá."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🛏️</div>
+                        <div class="service-time">⏱️ 40m a 1h</div>
+                    </div>
+                    <h3>Limpeza de Colchão</h3>
+                    <p>Processo focado na eliminação de suor, pele morta e ácaros. Durma em um ambiente limpo e seguro.</p>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a limpeza do meu colchão."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🪑</div>
+                        <div class="service-time">⏱️ 30m a 1h</div>
+                    </div>
+                    <h3>Poltronas e Cadeiras</h3>
+                    <p>Renovação do estofado de cadeiras de jantar, escritório e poltronas com técnica adequada.</p>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a higienização de poltronas/cadeiras."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🧶</div>
+                        <div class="service-time">⏱️ 1h a 1h30</div>
+                    </div>
+                    <h3>Higienização de Tapetes</h3>
+                    <p>Lavagem técnica para remover poeira profunda e odores de tapetes comuns ou mais pesados.</p>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Quero orçar a lavagem do meu tapete."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏢</div>
+                        <div class="service-time">⏱️ Sob consulta</div>
+                    </div>
+                    <h3>Limpeza Comercial</h3>
+                    <p>Higienização em grande escala de cadeiras de escritório e estofados para empresas no RJ.</p>
+                    <a href="#" class="mini-cta wa-link" data-wa-msg="Olá! Sou empresa e quero orçar higienização comercial."><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Orçar este serviço</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Roller 2 -->
+    <div class="roller-wrapper">
+        <div class="roller-track-right" id="track2">
+            <!-- Items via JS -->
+        </div>
+    </div>
+
+    <!-- 9. Quiz Pré-Orçamento -->
+    <section id="quiz" class="section bg-bubbles">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 3rem;">
+                <h2>Faça seu <span class="text-accent">Pré-Orçamento Online</span></h2>
+                <p>Responda 6 perguntas rápidas para facilitar seu atendimento.</p>
+            </div>
+
+            <div class="glass-card quiz-container reveal">
+                <div class="quiz-progress">
+                    <div class="quiz-bar" id="quizBar"></div>
+                </div>
+
+                <!-- Q1 -->
+                <div class="quiz-step active" id="step1">
+                    <h3>🛋️ O que você quer higienizar?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextQuiz(1, 2, 'Sofá', 'p1')"><i>🛋️</i> Sofá</button>
+                        <button class="quiz-btn" onclick="nextQuiz(1, 2, 'Colchão', 'p1')"><i>🛏️</i> Colchão</button>
+                        <button class="quiz-btn" onclick="nextQuiz(1, 2, 'Poltrona / Cadeiras', 'p1')"><i>🪑</i> Poltronas/Cadeiras</button>
+                        <button class="quiz-btn" onclick="nextQuiz(1, 2, 'Tapete', 'p1')"><i>🧶</i> Tapete</button>
+                        <button class="quiz-btn" onclick="nextQuiz(1, 2, 'Banco Automotivo', 'p1')"><i>🚗</i> Banco Auto</button>
+                        <button class="quiz-btn" onclick="nextQuiz(1, 2, 'Mais de uma peça', 'p1')"><i>➕</i> Mais de uma peça</button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="quiz-step" id="step2">
+                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(2, 1)">← Voltar</button></div>
+                    <h3>🧼 Qual é a principal necessidade?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextQuiz(2, 3, 'Limpeza geral', 'p2')"><i>✨</i> Limpeza geral</button>
+                        <button class="quiz-btn" onclick="nextQuiz(2, 3, 'Mancha aparente', 'p2')"><i>☕</i> Mancha aparente</button>
+                        <button class="quiz-btn" onclick="nextQuiz(2, 3, 'Mau cheiro / Pet', 'p2')"><i>😷</i> Mau cheiro / Pet</button>
+                        <button class="quiz-btn" onclick="nextQuiz(2, 3, 'Ácaros e Alergia', 'p2')"><i>🤧</i> Ácaros / Alergia</button>
+                        <button class="quiz-btn" onclick="nextQuiz(2, 3, 'Renovar o aspecto', 'p2')"><i>🪄</i> Renovar aspecto</button>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="quiz-step" id="step3">
+                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(3, 2)">← Voltar</button></div>
+                    <h3>📸 Você consegue enviar foto da peça?</h3>
+                    <div class="quiz-options" style="grid-template-columns: 1fr; max-width: 400px; margin-inline: auto;">
+                        <button class="quiz-btn" onclick="nextQuiz(3, 4, 'Posso enviar foto agora', 'p3')"><i>📱</i> Sim, envio no WhatsApp</button>
+                        <button class="quiz-btn" onclick="nextQuiz(3, 4, 'Prefiro explicar sem foto', 'p3')"><i>💬</i> Prefiro só explicar</button>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="quiz-step" id="step4">
+                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(4, 3)">← Voltar</button></div>
+                    <h3>📍 Em qual região do RJ você está?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Zona Sul', 'p4')"><i>🏖️</i> Zona Sul</button>
+                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Zona Norte / Tijuca', 'p4')"><i>🏙️</i> Z. Norte / Tijuca</button>
+                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Zona Oeste / Barra / Recreio', 'p4')"><i>🌅</i> Barra / Z. Oeste</button>
+                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Centro', 'p4')"><i>🏢</i> Centro</button>
+                        <button class="quiz-btn" onclick="nextQuiz(4, 5, 'Baixada / Entorno', 'p4')"><i>🛣️</i> Baixada / Outros</button>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="quiz-step" id="step5">
+                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(5, 4)">← Voltar</button></div>
+                    <h3>⏱️ Qual a urgência do atendimento?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="nextQuiz(5, 6, 'O quanto antes', 'p5')"><i>🚨</i> O quanto antes</button>
+                        <button class="quiz-btn" onclick="nextQuiz(5, 6, 'Esta semana', 'p5')"><i>📅</i> Esta semana</button>
+                        <button class="quiz-btn" onclick="nextQuiz(5, 6, 'Agendar data', 'p5')"><i>🗓️</i> Agendar data fixa</button>
+                        <button class="quiz-btn" onclick="nextQuiz(5, 6, 'Pesquisando valor', 'p5')"><i>🔍</i> Só pesquisando valor</button>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="quiz-step" id="step6">
+                    <div style="text-align: left;"><button class="quiz-back-btn" onclick="prevQuiz(6, 5)">← Voltar</button></div>
+                    <h3>🏠 O atendimento é para:</h3>
+                    <div class="quiz-options" style="grid-template-columns: 1fr; max-width: 400px; margin-inline: auto;">
+                        <button class="quiz-btn" onclick="nextQuiz(6, 'loading', 'Residência', 'p6')"><i>🏠</i> Casa / Residência</button>
+                        <button class="quiz-btn" onclick="nextQuiz(6, 'loading', 'Empresa / Escritório', 'p6')"><i>🏢</i> Empresa / Escritório</button>
+                    </div>
+                </div>
+
+                <!-- Loading -->
+                <div class="quiz-step" id="stepLoading">
+                    <div style="display: flex; flex-direction: column; align-items: center; padding: 3rem 0;">
+                        <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163973/1_ipnatz.webp" alt="Loading" style="width: 60px; animation: pulseGlow 1.5s infinite;">
+                        <h3 class="text-accent" style="margin-top: 1.5rem;">Preparando seu pré-orçamento...</h3>
+                    </div>
+                </div>
+
+                <!-- Final -->
+                <div class="quiz-step" id="stepFinal">
+                    <h3 style="color: var(--cor-3); margin-bottom: 1rem;">Tudo pronto! ✨</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">As informações foram compiladas. Envie agora para nossa equipe no WhatsApp para receber valores e agendamento.</p>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                        <a href="#" id="quizWaLink" class="btn btn-wa" style="font-size: 1.15rem; padding: 1.2rem 2.5rem; width: 100%; max-width: 400px; display: inline-flex; justify-content: center;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            Enviar p/ WhatsApp
+                        </a>
+                        <button class="quiz-back-btn" onclick="resetQuiz()" style="margin:0;">Refazer Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegant Divider (Water Drop) -->
+    <div class="elegant-divider reveal">
+        <div class="divider-line"></div>
+        <div class="divider-center">
+            💧
+            <div class="div-particle dp1"></div>
+            <div class="div-particle dp2"></div>
+            <div class="div-particle dp3"></div>
+        </div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- 10. Depoimentos Carousel (Infinito) -->
+    <section id="depoimentos" class="section">
+        <!-- Snow/Water drop overlay specifically for testimonials -->
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake" style="left: 10%; animation-duration: 10s; animation-delay: 0s;">💧</div>
+            <div class="snowflake" style="left: 30%; animation-duration: 12s; animation-delay: 2s;">💧</div>
+            <div class="snowflake" style="left: 50%; animation-duration: 15s; animation-delay: 4s;">💧</div>
+            <div class="snowflake" style="left: 70%; animation-duration: 11s; animation-delay: 1s;">💧</div>
+            <div class="snowflake" style="left: 90%; animation-duration: 14s; animation-delay: 3s;">💧</div>
+        </div>
+        
+        <div class="container text-center reveal" style="margin-bottom: 2rem; position:relative; z-index:2;">
+            <h2>O que nossos clientes <span class="text-accent">dizem</span></h2>
+            <p>Resultados reais de transformação e limpeza.</p>
+        </div>
+        
+        <div class="testimonials-wrapper reveal reveal-delay-1">
+            <div class="testi-track" id="testimonialTrack">
+                <!-- Cards injected via JS -->
+            </div>
+        </div>
+        
+        <div class="container text-center" style="margin-top: 2rem; position:relative; z-index:2;">
+            <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Gostaria de falar com a equipe Jesus Clean.">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Falar com a Jesus Clean
+            </a>
+        </div>
+    </section>
+
+    <!-- 11. Mapa / Atendimento RJ -->
+    <section id="mapa" class="section" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 3rem;">
+                <h2>Atendimento em todo o <span class="text-accent">Rio de Janeiro</span></h2>
+                <p>A Jesus Clean vai até você com atendimento agendado para residências, empresas e condomínios.</p>
+            </div>
+            
+            <div class="glass-card map-card reveal">
+                <!-- Google Maps focando no estado/cidade do RJ -->
+                <div class="map-iframe-container">
+                    <div class="map-overlay-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Atendimento em Domicílio
+                    </div>
+                    <!-- Zoom 10 for Rio de Janeiro state/city area -->
+                    <iframe src="https://www.google.com/maps?q=Rio+de+Janeiro+-+RJ&z=10&output=embed" loading="lazy" allowfullscreen></iframe>
+                </div>
+
+                <div class="map-info">
+                    <h3>REGIÕES ATENDIDAS</h3>
+                    <p>Agende seu horário com nossos especialistas.</p>
+                    
+                    <div class="region-grid">
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Zona Sul</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Zona Norte & Tijuca</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Barra & Recreio</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Jacarepaguá</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Centro</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Méier</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Campo Grande</div>
+                        <div class="region-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Baixada (Sob consulta)</div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Gostaria de consultar se há atendimento para o meu bairro." style="justify-content: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                            Consultar atendimento no meu bairro
+                        </a>
+                        <a href="#" class="btn btn-glow wa-link" data-wa-msg="Olá! Gostaria de enviar minha localização para verificar atendimento." style="justify-content: center; font-size: 0.95rem; border:none; box-shadow:none;">
+                            Enviar localização pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Roller 3 -->
+    <div class="roller-wrapper" style="margin-top: 4rem;">
+        <div class="roller-track-left" id="track3">
+            <!-- Items via JS -->
+        </div>
+    </div>
+
+    <!-- 13. Oferta Final -->
+    <section class="section text-center bg-waves" style="background-color: var(--cor-2);">
+        <div class="container reveal">
+            <h2>Seu estofado pode parecer <span class="text-accent">novo de novo</span></h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 1.5rem; color: var(--cor-4);">
+                Envie uma foto pelo WhatsApp e receba uma orientação rápida para higienizar seu sofá, colchão, tapete ou estofado.
+            </p>
+            <div style="display: inline-block; background: rgba(0,174,239,0.05); padding: 0.8rem 1.5rem; border-radius: 8px; font-size: 0.95rem; color: var(--cor-5); border: 1px solid rgba(0,174,239,0.2); margin-bottom: 2.5rem;">
+                ⚠️ Agenda sujeita à disponibilidade por região. Chame agora para consultar horários.
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="#" class="btn btn-wa wa-link" data-wa-msg="Olá! Vim pelo site. Posso enviar a foto do meu estofado para avaliação?" style="padding: 1.2rem 2.5rem; font-size: 1.15rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    Enviar foto no WhatsApp
+                </a>
+                <a href="https://instagram.com/jesus.clean" target="_blank" class="btn btn-glow" style="padding: 1.2rem 2.5rem; font-size: 1.15rem;">
+                    Ver Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Roller 4 -->
+    <div class="roller-wrapper">
+        <div class="roller-track-right" id="track4">
+            <!-- Items via JS -->
+        </div>
+    </div>
+
+    <!-- 15. Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid reveal">
+                <div class="footer-col">
+                    <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1780163972/4c1cd565-a380-4d2d-85ff-5d7f244fef68_1_huy4fa.webp" alt="Jesus Clean" class="footer-logo-img">
+                    <p style="font-size: 0.95rem;">Higienização e limpeza profunda de estofados residenciais e comerciais no Rio de Janeiro.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="#servicos">Nossos Serviços</a></li>
+                        <li><a href="#quiz">Pré-Orçamento Online</a></li>
+                        <li><a href="#especialista">O Especialista</a></li>
+                        <li><a href="#depoimentos">Avaliações</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contato Direto</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="wa-link" style="color: var(--cor-whatsapp); font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Pedir orçamento no WhatsApp</a></li>
+                        <li><a href="https://instagram.com/jesus.clean" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> @jesus.clean no Instagram</a></li>
+                        <li><span style="display:flex; align-items:center; gap:0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Atendimento RJ</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Jesus Clean. Todos os direitos reservados.</p>
+                <a href="#" class="montana-signature">Produzido por MONTANA</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ícones Flutuantes -->
+    <div class="floating-icons">
+        <a href="#" class="floating-icon float-wa wa-link" aria-label="WhatsApp">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        </a>
+        <a href="https://instagram.com/jesus.clean" target="_blank" class="floating-icon float-ig" aria-label="Instagram">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+    </div>
+
+    <!-- JS Scripts -->
+    <script>
+        // 1. Preloader Logic (Extended time + smooth fade)
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.visibility = 'hidden';
+                    preloader.remove();
+                }, 800); // 800ms fade transition
+            }, 2000); // 2000ms delay for loading bar visualization
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 2. WhatsApp Number Update
+        const waNumber = "5521980325724";
+        document.querySelectorAll('.wa-link').forEach(link => {
+            if (link.id !== 'quizWaLink') {
+                const customMsg = link.getAttribute('data-wa-msg') || "Olá! Vim pelo site da Jesus Clean e gostaria de saber mais.";
+                link.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(customMsg)}`;
+                link.target = "_blank";
+            }
+        });
+
+        // 3. Navbar iPhone Effect & Mobile Menu
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+
+        // 4. Infinite Rollers
+        const texts1 = ["🧼 Higienização de estofados", "🛋️ Sofás", "🛏️ Colchões", "🪑 Poltronas", "🧶 Tapetes", "📍 Atendimento no RJ", "📱 Orçamento pelo WhatsApp"];
+        const texts2 = ["✨ Limpeza profunda", "🌸 Remoção de odores", "🛋️ Sofá renovado", "🛡️ Cuidado com o tecido", "📅 Atendimento agendado", "👁️ Resultado visível"];
+        const texts3 = ["📍 Atendimento em todo RJ", "📅 Agendamento pelo WhatsApp", "🏠 Higienização em domicílio", "🏢 Residencial e comercial"];
+        const texts4 = ["🛋️ Sofá limpo", "🏠 Casa mais confortável", "😷 Adeus mau cheiro", "✨ Higienização profissional", "📍 Atendimento no RJ", "📱 Peça seu orçamento"];
+        
+        function populateRoller(trackId, texts) {
+            const track = document.getElementById(trackId);
+            if(!track) return;
+            let html = '';
+            const fullArray = [...texts, ...texts, ...texts, ...texts];
+            fullArray.forEach(text => {
+                const parts = text.split(' ');
+                const emoji = parts.shift();
+                html += `<span class="roller-item"><span>${emoji}</span> ${parts.join(' ')}</span>`;
+            });
+            track.innerHTML = html;
+        }
+        populateRoller('track1', texts1); // Left
+        populateRoller('track2', texts2); // Right
+        populateRoller('track3', texts3); // Left
+        populateRoller('track4', texts4); // Right
+
+        // 5. Scroll Reveal & Counters
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000; 
+                        const increment = target / (duration / 16);
+                        let current = 0;
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.innerText = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target;
+                                const prefixEl = counter.parentElement.querySelector('span[data-prefix]');
+                                if(prefixEl) prefixEl.innerText = prefixEl.getAttribute('data-prefix');
+                            }
+                        };
+                        updateCounter();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 6. Services Drag/Swipe
+        const slider = document.getElementById('servicesCarousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        if(slider){
+            slider.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; });
+            slider.addEventListener('mouseleave', () => { isDown = false; });
+            slider.addEventListener('mouseup', () => { isDown = false; });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; 
+                slider.scrollLeft = scrollLeft - walk;
+            });
+            slider.addEventListener('touchstart', (e) => { isDown = true; startX = e.touches[0].pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; });
+            slider.addEventListener('touchend', () => { isDown = false; });
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        // 7. Interactive Quiz
+        let quizData = { p1: '', p2: '', p3: '', p4: '', p5: '', p6: '' };
+        
+        function nextQuiz(current, next, answer, prop) {
+            if(prop) quizData[prop] = answer;
+            
+            document.getElementById('step' + current).classList.remove('active');
+            const bar = document.getElementById('quizBar');
+            
+            if(next === 'loading') {
+                document.getElementById('stepLoading').classList.add('active');
+                bar.style.width = '95%';
+                
+                setTimeout(() => {
+                    document.getElementById('stepLoading').classList.remove('active');
+                    document.getElementById('stepFinal').classList.add('active');
+                    bar.style.width = '100%';
+                    
+                    const customMsg = `Olá! Vim pelo site da Jesus Clean e fiz o pré-orçamento.%0A%0A*Peça:* ${quizData.p1}%0A*Necessidade:* ${quizData.p2}%0A*Foto:* ${quizData.p3}%0A*Região:* ${quizData.p4}%0A*Urgência:* ${quizData.p5}%0A*Local:* ${quizData.p6}%0A%0AGostaria de receber um orçamento.`;
+                    document.getElementById('quizWaLink').href = `https://wa.me/5521980325724?text=${customMsg}`;
+                    document.getElementById('quizWaLink').target = "_blank";
+                }, 1500);
+            } else {
+                document.getElementById('step' + next).classList.add('active');
+                bar.style.width = ((next - 1) * 16.6) + '%';
+            }
+        }
+
+        function prevQuiz(current, prev) {
+            document.getElementById('step' + current).classList.remove('active');
+            document.getElementById('step' + prev).classList.add('active');
+            document.getElementById('quizBar').style.width = ((prev - 1) * 16.6) + '%';
+        }
+        
+        function resetQuiz() {
+            document.getElementById('stepFinal').classList.remove('active');
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('quizBar').style.width = '0%';
+            quizData = { p1: '', p2: '', p3: '', p4: '', p5: '', p6: '' };
+        }
+
+        // 8. Testimonials (Infinite Marquee)
+        const testimonials = [
+            { name: "Maria Fernanda", role: "Zona Sul, RJ", text: "Meu sofá estava com manchas escuras e mau cheiro do cachorro. Eles deixaram como novo e muito cheiroso!" },
+            { name: "Carlos Eduardo", role: "Barra da Tijuca, RJ", text: "Fiz a limpeza dos colchões aqui de casa. O resultado da água que saiu foi assustador. Recomendo muito pela saúde." },
+            { name: "Amanda Silva", role: "Tijuca, RJ", text: "Atendimento pontual, educados e limparam as poltronas e cadeiras de jantar perfeitamente. Secou rápido." },
+            { name: "Roberto Alves", role: "Centro, RJ", text: "Profissionais excelentes. Meu tapete da sala ficou renovado e sem aquele cheiro de mofo. Vale cada centavo." },
+            { name: "Juliana Costa", role: "Recreio, RJ", text: "Fiz a higienização dos bancos do meu carro. Valorizou muito o veículo, tirou encardido de anos." }
+        ];
+
+        const testiTrack = document.getElementById('testimonialTrack');
+        if(testiTrack){
+            let testiHtml = '';
+            const buildCard = (t) => {
+                const initial = t.name.charAt(0);
+                return `
+                    <div class="review-card-elegant">
+                        <div class="review-header">
+                            <div class="review-user">
+                                <div class="review-avatar">${initial}</div>
+                                <div>
+                                    <div class="review-name">${t.name}</div>
+                                    <div class="review-role">${t.role}</div>
+                                </div>
+                            </div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <div class="review-text">"${t.text}"</div>
+                    </div>
+                `;
+            };
+            testimonials.forEach(t => testiHtml += buildCard(t));
+            testimonials.forEach(t => testiHtml += buildCard(t)); 
+            testimonials.forEach(t => testiHtml += buildCard(t)); 
+            testiTrack.innerHTML = testiHtml;
+        }
+    </script>
+</body>
+</html>
