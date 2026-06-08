@@ -37,6 +37,7 @@ footer { background: #04121C; padding: 5rem 0 2rem; border-top: 1px solid rgba(2
     .hero-ctas { justify-content: flex-start; }
     .map-card { flex-direction: column; }
     .baby-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .baby-care-strip { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -90,6 +91,7 @@ footer { background: #04121C; padding: 5rem 0 2rem; border-top: 1px solid rgba(2
     .specialist-btns .btn { width: 100%; justify-content: center; font-size: 0.95rem; padding: 1rem;}
 
     .swipe-hint { display: flex; }
+    .service-time { max-width: 132px; font-size: 0.72rem; }
     .baby-section { text-align: left; }
     .baby-panel { padding: 1.5rem; }
     .baby-items { grid-template-columns: 1fr; }

@@ -21,6 +21,13 @@ window.JC_SERVICES = [
         whatsappMessage: "Olá! Quero orçar a higienização do meu sofá dobrável."
     },
     {
+        icon: "🛡️",
+        name: "Impermeabilização de estofados",
+        time: "Sob avaliação",
+        description: "Proteção aplicada ao tecido para ajudar a reduzir a absorção de líquidos e facilitar a manutenção do estofado.",
+        whatsappMessage: "Olá! Quero orçar a impermeabilização do meu estofado."
+    },
+    {
         icon: "🧶",
         name: "Tapete",
         time: "Até 15 dias úteis",
